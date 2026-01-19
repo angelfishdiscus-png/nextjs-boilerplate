@@ -1,65 +1,131 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main style={{ fontFamily: "Arial, sans-serif", padding: "20px", lineHeight: "1.6" }}>
+      
+      {/* HERO */}
+      <section style={{ textAlign: "center", marginBottom: "50px" }}>
+        <h1 style={{ fontSize: "2.5rem", color: "#0a3d62" }}>
+          Angelfish Discus
+        </h1>
+
+        <h2 style={{ fontSize: "1.2rem", color: "#555" }}>
+          Escalares de alta calidad en Bogotá y envíos a toda Colombia
+        </h2>
+
+        <p style={{ fontSize: "1.1rem", color: "#333", marginTop: "15px" }}>
+          Nuestra meta es ofrecer la mejor variedad de peces ángel (escalares) y discos,
+          con calidad, salud y asesoría profesional.
+        </p>
+
+        <a
+          href="https://wa.me/573208880555"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            marginTop: "25px",
+            padding: "14px 28px",
+            backgroundColor: "#25D366",
+            color: "#fff",
+            textDecoration: "none",
+            borderRadius: "6px",
+            fontWeight: "bold",
+            fontSize: "1rem",
+          }}
+        >
+          📲 Asesoría por WhatsApp
+        </a>
+      </section>
+
+      {/* SOBRE NOSOTROS */}
+      <section style={{ marginBottom: "40px" }}>
+        <h2 style={{ color: "#0a3d62" }}>🐠 Sobre nosotros</h2>
+        <p>
+          Somos un emprendimiento ubicado en{" "}
+          <strong>Mosquera, cerca de Bogotá, Colombia</strong>,
+          dedicado a la cría y comercialización de peces ornamentales,
+          especialmente <strong>escalares</strong> y próximamente <strong>discos</strong>.
+        </p>
+        <p>
+          Trabajamos con peces saludables, bien alimentados y adaptados,
+          ofreciendo asesoría personalizada antes y después de la compra.
+        </p>
+      </section>
+
+      {/* ESCALARES */}
+      <section style={{ marginBottom: "40px" }}>
+        <h2 style={{ color: "#0a3d62" }}>🐠 Escalares disponibles</h2>
+
+        <ul>
+          <li>Escalar Red Devil</li>
+          <li>Escalar Búlgaro Avatar</li>
+          <li>Escalar Full Black Blushing</li>
+          <li>Escalar Albino</li>
+          <li>Escalar Red Devil Albino</li>
+        </ul>
+
+        <p>
+          <strong>Tamaños de venta:</strong><br />
+          • Juveniles: 2 – 3 cm<br />
+          • Medianos: 4 – 6 cm<br />
+          • Ejemplares grandes: <em>consultar por WhatsApp</em>
+        </p>
+
+        <p>
+          <strong>Precios:</strong><br />
+          • Escalares comunes: <strong>Desde $5.000 COP</strong><br />
+          • Variedades especiales (albinos, red devil): <strong>Desde $10.000 COP</strong><br />
+          <em>El precio final depende del tamaño, variedad y cantidad.</em>
+        </p>
+      </section>
+
+      {/* INSUMOS */}
+      <section style={{ marginBottom: "40px" }}>
+        <h2 style={{ color: "#0a3d62" }}>🧪 Insumos para acuarios</h2>
+        <ul>
+          <li>Comida especializada para escalares</li>
+          <li>Filtros tipo pulmón para acuarios</li>
+        </ul>
+        <p>
+          Consulta disponibilidad y recibe asesoría según tu acuario.
+        </p>
+      </section>
+
+      {/* CUIDADOS */}
+      <section style={{ marginBottom: "40px" }}>
+        <h2 style={{ color: "#0a3d62" }}>💧 Cuidados básicos del escalar</h2>
+        <ul>
+          <li>Filtración constante y de buena calidad</li>
+          <li>Iluminación moderada</li>
+          <li>pH recomendado entre 6.5 y 7.2</li>
+          <li>Temperatura entre 26°C y 28°C</li>
+          <li>Cambios parciales de agua semanales</li>
+        </ul>
+        <p>
+          Siempre asesoramos a nuestros clientes para garantizar el bienestar del pez.
+        </p>
+      </section>
+
+      {/* ENVIOS */}
+      <section style={{ marginBottom: "40px" }}>
+        <h2 style={{ color: "#0a3d62" }}>🚚 Envíos a nivel nacional</h2>
+        <p>
+          Realizamos envíos dentro de Colombia.
+          El costo del envío depende de la ciudad, la cantidad de peces
+          y la transportadora seleccionada.
+        </p>
+        <p>
+          Escríbenos por WhatsApp para cotizar tu pedido.
+        </p>
+      </section>
+
+      {/* FOOTER */}
+      <footer style={{ textAlign: "center", marginTop: "50px", color: "#666" }}>
+        <p>
+          © {new Date().getFullYear()} Angelfish Discus – Mosquera, Colombia
+        </p>
+      </footer>
+
+    </main>
   );
 }
