@@ -1,3 +1,47 @@
+"use client";
+import { useState } from "react";
+function FaqButton({ title, children }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ marginBottom: "20px" }}>
+      <button
+        onClick={() => setOpen(!open)}
+        style={{
+          width: "100%",
+          textAlign: "left",
+          padding: "16px 20px",
+          background: "linear-gradient(135deg, #1e6091, #0a3d62)",
+          color: "#ffffff",
+          border: "none",
+          borderRadius: "14px",
+          fontSize: "1.05rem",
+          fontWeight: "bold",
+          cursor: "pointer",
+          boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
+        }}
+      >
+        {title}
+      </button>
+
+      {open && (
+        <div
+          style={{
+            marginTop: "12px",
+            padding: "18px 20px",
+            backgroundColor: "#ffffff",
+            borderRadius: "14px",
+            boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+            color: "#334155",
+            lineHeight: "1.7",
+          }}
+        >
+          {children}
+        </div>
+      )}
+    </div>
+  );
+}
 export default function Home() {
   return (
     <div
@@ -7,6 +51,59 @@ export default function Home() {
         backgroundColor: "#f4f8fb",
       }}
     >
+      import { useState } from "react";
+
+function FaqButton({ title, children }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      onClick={() => setOpen(!open)}
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "18px",
+        padding: "22px 26px",
+        marginBottom: "22px",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h3 style={{ margin: 0, color: "#1e6091" }}>{title}</h3>
+        <span
+          style={{
+            fontSize: "1.4rem",
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.3s ease",
+          }}
+        >
+          ⌄
+        </span>
+      </div>
+
+      {open && (
+        <p
+          style={{
+            marginTop: "15px",
+            fontSize: "1.05rem",
+            lineHeight: "1.7",
+            color: "#334155",
+          }}
+        >
+          {children}
+        </p>
+      )}
+    </div>
+  );
+}
+
       {/* ================= HEADER ================= */}
       <header
         style={{
@@ -83,81 +180,6 @@ export default function Home() {
           📍 Mosquera – Cundinamarca, Colombia
         </p>
       </section>
-function ProductTabs() {
-  const [activeTab, setActiveTab] = useState("especificaciones");
-
-  return (
-    <div
-      style={{
-        backgroundColor: "#ffffff",
-        borderRadius: "18px",
-        padding: "30px",
-        marginTop: "30px",
-        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
-      }}
-    >
-      {/* BOTONES */}
-      <div
-        style={{
-          display: "flex",
-          gap: "12px",
-          marginBottom: "20px",
-        }}
-      >
-        {["descripcion", "especificaciones", "resenas"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            style={{
-              flex: 1,
-              padding: "12px",
-              borderRadius: "12px",
-              border: "none",
-              cursor: "pointer",
-              backgroundColor:
-                activeTab === tab ? "#1e6091" : "#f4f8fb",
-              color:
-                activeTab === tab ? "#ffffff" : "#1e293b",
-              fontWeight: "bold",
-            }}
-          >
-            {tab === "descripcion"
-              ? "Descripción"
-              : tab === "especificaciones"
-              ? "Especificaciones"
-              : "Reseñas"}
-          </button>
-        ))}
-      </div>
-
-      {/* CONTENIDO */}
-      {activeTab === "descripcion" && (
-        <p>
-          Escalar negro premium, elegante y exclusivo. Criado con genética
-          seleccionada y cuidado profesional.
-        </p>
-      )}
-
-{activeTab === "especificaciones" && (
-  <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-    <span style={badgeStyle}>📏 Tamaño: 10–12 cm</span>
-    <span style={badgeStyle}>⚖️ Peso: 50–60 g</span>
-    <span style={badgeStyle}>
-      🍽️ Alimentación: escamas y alimentos vivos
-    </span>
-    <span style={badgeStyle}>🌍 Origen: Colombia</span>
-  </div>
-)}
-
-      {activeTab === "resenas" && (
-        <div>
-          <p>⭐ Excelente calidad y muy bien empacado</p>
-          <p>⭐ Llegó sano y hermoso</p>
-        </div>
-      )}
-    </div>
-  );
-}
 
       {/* ================= SOBRE NOSOTROS ================= */}
       <section
@@ -199,102 +221,33 @@ function ProductTabs() {
         fontSize: "2.4rem",
         marginBottom: "50px",
       }}
-      <section style={{ padding: "90px 20px" }}>
-  <h2 style={{ textAlign: "center", color: "#0a3d62" }}>
-    Bulgáro Black
-  </h2>
-  <p style={{ textAlign: "center" }}>
-    Escalar negro premium, elegante y exclusivo.
-  </p>
-
-  <ProductTabs />
-</section>
-
     >
       Preguntas Frecuentes
     </h2>
 
-    function FaqButton({ title, content }: any) {
-  const [open, setOpen] = useState(false);
+    <FaqButton title="⏱️ Tiempos de entrega y forma de envío">
+      Realizamos envíos a nivel nacional dentro de Colombia.
+      El tiempo de entrega depende de la ciudad y la transportadora,
+      generalmente entre <strong>24 y 48 horas</strong> después del despacho.
+      Cada envío se coordina previamente para garantizar la seguridad
+      de los peces.
+    </FaqButton>
 
-  return (
-    <div
-      style={{
-        backgroundColor: "#ffffff",
-        borderRadius: "16px",
-        padding: "20px",
-        marginBottom: "20px",
-        boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-        cursor: "pointer",
-      }}
-      onClick={() => setOpen(!open)}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <h3 style={{ color: "#1e6091", margin: 0 }}>{title}</h3>
-        <span style={{ fontSize: "1.5rem" }}>
-          {open ? "−" : "+"}
-        </span>
-      </div>
+    <FaqButton title="🚚 Envío de peces y garantía">
+      Los peces se envían con empaque especializado, oxígeno y aislamiento
+      térmico. Garantizamos que los peces salen vivos y en óptimas condiciones.
+      Cualquier novedad debe reportarse inmediatamente al momento de recibir
+      el envío.
+    </FaqButton>
 
-      {open && (
-        <p
-          style={{
-            marginTop: "15px",
-            fontSize: "1.05rem",
-            lineHeight: "1.7",
-            color: "#334155",
-          }}
-        >
-          {content}
-        </p>
-      )}
-    </div>
-  );
-}
-
-        ⏱️ Tiempos de entrega y forma de envío
-      </h3>
-      <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
-        Realizamos envíos a nivel nacional dentro de Colombia.
-        El tiempo de entrega depende de la ciudad y la transportadora,
-        generalmente entre <strong>24 y 48 horas</strong> después del despacho.
-        Cada envío se coordina previamente para garantizar la seguridad
-        de los peces.
-      </p>
-    </div>
-
-    <div style={{ marginBottom: "35px" }}>
-      <h3 style={{ color: "#1e6091", marginBottom: "10px" }}>
-        🚚 Envío de peces y garantía
-      </h3>
-      <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
-        Los peces se envían con empaque especializado, oxígeno y aislamiento
-        térmico. Garantizamos que los peces salen vivos y en óptimas condiciones.
-        Cualquier novedad debe reportarse inmediatamente al momento de recibir
-        el envío.
-      </p>
-    </div>
-
-    <div>
-      <h3 style={{ color: "#1e6091", marginBottom: "10px" }}>
-        📍 ¿Tienen punto físico?
-      </h3>
-      <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
-        Estamos ubicados en <strong>Mosquera, Cundinamarca</strong>.
-        Angelfish Discus es un <strong>hobby especializado</strong> enfocado
-        en la cría responsable de escalares.
-        Las visitas se realizan únicamente con cita previa.
-      </p>
-    </div>
+    <FaqButton title="📍 ¿Tienen punto físico?">
+      Estamos ubicados en <strong>Mosquera, Cundinamarca</strong>.
+      Angelfish Discus es un <strong>hobby especializado</strong> enfocado
+      en la cría responsable de escalares.
+      Las visitas se realizan únicamente con cita previa.
+    </FaqButton>
   </div>
 </section>
-   
 
 {/* ================= BULGARO BLACK ================= */}
 <section
