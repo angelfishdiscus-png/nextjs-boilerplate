@@ -13,17 +13,34 @@ function FaqButton({ title, children }) {
           width: "100%",
           textAlign: "left",
           padding: "18px 22px",
-          background: "linear-gradient(135deg, #1e6091, #0a3d62)",
+          background: open
+            ? "linear-gradient(135deg, #3fa9f5, #1e6091)"
+            : "linear-gradient(135deg, #1e6091, #0a3d62)",
           color: "#ffffff",
           border: "none",
           borderRadius: "16px",
-          fontSize: "1.05rem",
+          fontSize: "1.1rem",
           fontWeight: "bold",
           cursor: "pointer",
-          boxShadow: "0 8px 22px rgba(0,0,0,0.25)",
+          boxShadow: open
+            ? "0 10px 30px rgba(30,96,145,0.45)"
+            : "0 6px 18px rgba(0,0,0,0.25)",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          transition: "all 0.3s ease",
         }}
       >
         {title}
+        <span
+          style={{
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.3s ease",
+            fontSize: "1.4rem",
+          }}
+        >
+          ⌄
+        </span>
       </button>
 
       {open && (
@@ -55,9 +72,6 @@ export default function Home() {
         backgroundColor: "#f4f8fb",
       }}
     >
-
-
-
       {/* ================= HEADER ================= */}
       <header
         style={{
@@ -150,17 +164,11 @@ export default function Home() {
         <p style={{ fontSize: "1.05rem", lineHeight: "1.7" }}>
           En <strong>Angelfish Discus</strong> nos dedicamos a la cría responsable
           de peces ornamentales, enfocados principalmente en{" "}
-          <strong>escalares</strong> de alta calidad y próximamente{" "}
-          <strong>discos</strong>.
-        </p>
-
-        <p style={{ fontSize: "1.05rem", lineHeight: "1.7" }}>
-          Nuestros peces son criados con parámetros estables, alimentación
-          especializada y manejo profesional, garantizando ejemplares sanos,
-          fuertes y bien adaptados.
+          <strong>escalares</strong> de alta calidad.
         </p>
       </section>
-    {/* ================= FAQ ================= */}
+
+      {/* ================= FAQ ================= */}
       <section
         style={{
           background: "linear-gradient(135deg, #f4f8fb 0%, #e6f0f8 100%)",
@@ -177,6 +185,7 @@ export default function Home() {
             }}
           >
             Preguntas Frecuentes
+            
           </h2>
 
           <FaqButton title="⏱️ Tiempos de entrega y forma de envío">
