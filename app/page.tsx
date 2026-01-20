@@ -98,9 +98,9 @@ export default function Home() {
 
         <p style={{ fontSize: "1.05rem", lineHeight: "1.7" }}>
           En <strong>Angelfish Discus</strong> nos dedicamos a la cría responsable
-          de peces ornamentales, enfocados principalmente en
-          <strong> escalares</strong> de alta calidad y próximamente
-          <strong> discos</strong>.
+          de peces ornamentales, enfocados principalmente en{" "}
+          <strong>escalares</strong> de alta calidad y próximamente{" "}
+          <strong>discos</strong>.
         </p>
 
         <p style={{ fontSize: "1.05rem", lineHeight: "1.7" }}>
@@ -159,12 +159,17 @@ export default function Home() {
                   borderRadius: "18px",
                   overflow: "hidden",
                   boxShadow: "0 14px 35px rgba(0,0,0,0.18)",
+                  transition: "transform 0.3s ease",
                 }}
               >
                 <img
                   src={item.img}
                   alt={item.title}
-                  style={{ width: "100%", height: "230px", objectFit: "cover" }}
+                  style={{
+                    width: "100%",
+                    height: "230px",
+                    objectFit: "cover",
+                  }}
                 />
 
                 <div style={{ padding: "24px" }}>
@@ -203,8 +208,13 @@ export default function Home() {
         }}
       >
         <h2 style={{ color: "#0a3d62" }}>🚚 Envíos a nivel nacional</h2>
-
-        <p style={{ maxWidth: "720px", margin: "18px auto", fontSize: "1.05rem" }}>
+        <p
+          style={{
+            maxWidth: "720px",
+            margin: "18px auto",
+            fontSize: "1.05rem",
+          }}
+        >
           Realizamos envíos seguros a toda Colombia.  
           El costo depende de la ciudad, cantidad de peces y transportadora.
         </p>
