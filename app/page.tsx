@@ -1,72 +1,6 @@
 "use client";
 import { useState } from "react";
 
-/* ================= COMPONENTE PRODUCT TABS ================= */
-function ProductTabs({ product }: any) {
-  const [activeTab, setActiveTab] = useState("descripcion");
-
-  return (
-    <div
-      style={{
-        maxWidth: "800px",
-        margin: "40px auto",
-        backgroundColor: "#ffffff",
-        borderRadius: "18px",
-        padding: "30px",
-        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
-      }}
-    >
-      {/* TABS */}
-      <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
-        {["descripcion", "especificaciones", "resenas"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            style={{
-              flex: 1,
-              padding: "12px 0",
-              borderRadius: "12px",
-              border: "none",
-              cursor: "pointer",
-              fontWeight: activeTab === tab ? "bold" : "normal",
-              backgroundColor: activeTab === tab ? "#1e6091" : "#f4f8fb",
-              color: activeTab === tab ? "#ffffff" : "#1e293b",
-              transition: "0.3s",
-            }}
-          >
-            {tab === "descripcion"
-              ? "Descripción"
-              : tab === "especificaciones"
-              ? "Especificaciones"
-              : "Reseñas"}
-          </button>
-        ))}
-      </div>
-
-      {/* CONTENIDO DE LAS TABS */}
-      <div style={{ color: "#334155" }}>
-        {activeTab === "descripcion" && <p>{product.descripcion}</p>}
-        {activeTab === "especificaciones" && (
-          <ul>
-            {product.especificaciones.map((item: string, i: number) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        )}
-        {activeTab === "resenas" && (
-          <div>
-            {product.resenas.map((r: string, i: number) => (
-              <p key={i} style={{ marginBottom: "10px" }}>
-                ⭐ {r}
-              </p>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
 /* ================= COMPONENTE FAQ ================= */
 function FaqItem({ item }: any) {
   const [open, setOpen] = useState(false);
@@ -100,6 +34,76 @@ function FaqItem({ item }: any) {
         <p style={{ marginTop: "15px", color: "#334155" }}>{item.content}</p>
       )}
     </div>
+  );
+}
+
+/* ================= COMPONENTE PRODUCTO CON PESTAÑAS ================= */
+function ProductTabs({ product }: any) {
+  const [activeTab, setActiveTab] = useState("descripcion");
+
+  return (
+    <section
+      style={{
+        maxWidth: "900px",
+        margin: "60px auto",
+        backgroundColor: "#ffffff",
+        borderRadius: "18px",
+        padding: "30px",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
+      }}
+    >
+      <h2 style={{ textAlign: "center", color: "#0a3d62", marginBottom: "20px" }}>
+        {product.nombre}
+      </h2>
+
+      {/* TABS */}
+      <div style={{ display: "flex", gap: "10px", justifyContent: "center", marginBottom: "25px" }}>
+        {["descripcion", "especificaciones", "resenas"].map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            style={{
+              flex: tab === "descripcion" ? 2 : 1,
+              padding: "10px 0",
+              borderRadius: "12px",
+              border: "none",
+              cursor: "pointer",
+              fontWeight: activeTab === tab ? "bold" : "normal",
+              backgroundColor: activeTab === tab ? "#1e6091" : "#f4f8fb",
+              color: activeTab === tab ? "#ffffff" : "#1e293b",
+              transition: "0.3s",
+            }}
+          >
+            {tab === "descripcion"
+              ? "Descripción"
+              : tab === "especificaciones"
+              ? "Especificaciones"
+              : "Reseñas"}
+          </button>
+        ))}
+      </div>
+
+      {/* CONTENIDO DE LAS TABS */}
+      <div style={{ color: "#334155", lineHeight: "1.6" }}>
+        {activeTab === "descripcion" && <p>{product.descripcion}</p>}
+        {activeTab === "especificaciones" && (
+          <ul>
+            {product.especificaciones.map((item: string, i: number) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        )}
+        {activeTab === "resenas" && (
+          <div>
+            {product.resenas.map((r: string, i: number) => (
+              <p key={i} style={{ marginBottom: "8px" }}>
+                ⭐ {r}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 
@@ -175,6 +179,7 @@ export default function Home() {
       {/* ================= PRODUCTO CON TABS ================= */}
       <ProductTabs
         product={{
+          nombre: "Bulgáro Black",
           descripcion:
             "Escalar negro premium, elegante y exclusivo. Criado con cuidado profesional.",
           especificaciones: [
