@@ -1,7 +1,12 @@
 export default function Home() {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933", backgroundColor: "#ffffff" }}>
-
+    <div
+      style={{
+        fontFamily: "Arial, sans-serif",
+        color: "#1f2933",
+        backgroundColor: "#f4f8fb",
+      }}
+    >
       {/* ================= HEADER ================= */}
       <header
         style={{
@@ -9,7 +14,7 @@ export default function Home() {
           top: 0,
           zIndex: 100,
           backgroundColor: "#ffffff",
-          borderBottom: "1px solid #e5e7eb",
+          borderBottom: "3px solid #1e6091",
           padding: "14px 40px",
           display: "flex",
           alignItems: "center",
@@ -22,10 +27,10 @@ export default function Home() {
             alt="Angelfish Discus Logo"
             style={{
               height: "58px",
-              filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.2))",
+              filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.25))",
             }}
           />
-          <strong style={{ fontSize: "1.25rem", color: "#0a3d62" }}>
+          <strong style={{ fontSize: "1.3rem", color: "#0a3d62" }}>
             Angelfish Discus
           </strong>
         </div>
@@ -34,12 +39,13 @@ export default function Home() {
           href="https://wa.me/573208880555"
           target="_blank"
           style={{
-            padding: "10px 20px",
-            backgroundColor: "#25D366",
+            padding: "10px 22px",
+            background: "linear-gradient(135deg, #25D366, #1ebe5d)",
             color: "#ffffff",
-            borderRadius: "8px",
+            borderRadius: "30px",
             textDecoration: "none",
             fontWeight: "bold",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
           }}
         >
           WhatsApp
@@ -49,29 +55,31 @@ export default function Home() {
       {/* ================= HERO ================= */}
       <section
         style={{
-          background: "linear-gradient(135deg, #0a3d62, #1e6091)",
+          background:
+            "linear-gradient(135deg, #0a3d62 0%, #1e6091 70%, #3fa9f5 100%)",
           color: "#ffffff",
-          padding: "100px 20px",
+          padding: "110px 20px",
           textAlign: "center",
         }}
       >
-        <h1 style={{ fontSize: "3rem", marginBottom: "20px" }}>
+        <h1 style={{ fontSize: "3.2rem", marginBottom: "22px" }}>
           Escalares Premium en Colombia
         </h1>
 
         <p
           style={{
-            maxWidth: "800px",
+            maxWidth: "820px",
             margin: "0 auto",
-            fontSize: "1.25rem",
-            lineHeight: "1.6",
+            fontSize: "1.3rem",
+            lineHeight: "1.7",
+            opacity: 0.95,
           }}
         >
           Criadores especializados en peces ángel con genética seleccionada,
           excelente salud y asesoría profesional real.
         </p>
 
-        <p style={{ marginTop: "18px", opacity: 0.9 }}>
+        <p style={{ marginTop: "20px", fontSize: "1.05rem", opacity: 0.9 }}>
           📍 Mosquera – Cundinamarca, Colombia
         </p>
       </section>
@@ -79,32 +87,34 @@ export default function Home() {
       {/* ================= SOBRE NOSOTROS ================= */}
       <section
         style={{
-          padding: "70px 20px",
+          padding: "80px 20px",
           maxWidth: "1000px",
           margin: "auto",
         }}
       >
-        <h2 style={{ color: "#0a3d62", marginBottom: "20px" }}>
+        <h2 style={{ color: "#0a3d62", marginBottom: "22px" }}>
           🐠 ¿Quiénes somos?
         </h2>
-        <p>
+
+        <p style={{ fontSize: "1.05rem", lineHeight: "1.7" }}>
           En <strong>Angelfish Discus</strong> nos dedicamos a la cría responsable
           de peces ornamentales, enfocados principalmente en
           <strong> escalares</strong> de alta calidad y próximamente
           <strong> discos</strong>.
         </p>
-        <p>
+
+        <p style={{ fontSize: "1.05rem", lineHeight: "1.7" }}>
           Nuestros peces son criados con parámetros estables, alimentación
           especializada y manejo profesional, garantizando ejemplares sanos,
-          fuertes y adaptados.
+          fuertes y bien adaptados.
         </p>
       </section>
 
       {/* ================= VARIEDADES ================= */}
       <section
         style={{
-          backgroundColor: "#f8fafc",
-          padding: "80px 20px",
+          backgroundColor: "#ffffff",
+          padding: "90px 20px",
         }}
       >
         <div style={{ maxWidth: "1100px", margin: "auto" }}>
@@ -112,7 +122,7 @@ export default function Home() {
             style={{
               color: "#0a3d62",
               textAlign: "center",
-              marginBottom: "50px",
+              marginBottom: "55px",
             }}
           >
             Variedades Destacadas
@@ -122,53 +132,53 @@ export default function Home() {
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "35px",
+              gap: "38px",
             }}
           >
-            {/* CARD */}
             {[
               {
                 img: "/red-devil.jpg",
                 title: "Escalar Red Devil",
-                text: "Variedad premium de intenso color rojo, genética seleccionada y alta demanda.",
+                text: "Color rojo intenso, genética seleccionada y gran demanda.",
               },
               {
                 img: "/albino.jpg",
                 title: "Escalar Albino",
-                text: "Elegante, llamativo y perfecto para acuarios de exhibición.",
+                text: "Elegante, luminoso y perfecto para acuarios de exhibición.",
               },
               {
                 img: "/full-black.jpg",
                 title: "Escalar Full Black",
-                text: "Color negro profundo, ideal para proyectos de cría y exhibición.",
+                text: "Negro profundo y uniforme, ideal para proyectos premium.",
               },
             ].map((item, index) => (
               <div
                 key={index}
                 style={{
-                  backgroundColor: "#ffffff",
-                  borderRadius: "16px",
+                  backgroundColor: "#f4f8fb",
+                  borderRadius: "18px",
                   overflow: "hidden",
-                  boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
-                  transition: "transform 0.3s ease",
+                  boxShadow: "0 14px 35px rgba(0,0,0,0.18)",
                 }}
               >
                 <img
                   src={item.img}
                   alt={item.title}
-                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                  style={{ width: "100%", height: "230px", objectFit: "cover" }}
                 />
-                <div style={{ padding: "22px" }}>
-                  <h3 style={{ color: "#0a3d62", marginBottom: "10px" }}>
+
+                <div style={{ padding: "24px" }}>
+                  <h3 style={{ color: "#0a3d62", marginBottom: "12px" }}>
                     {item.title}
                   </h3>
                   <p>{item.text}</p>
+
                   <a
                     href="https://wa.me/573208880555"
                     target="_blank"
                     style={{
                       display: "inline-block",
-                      marginTop: "14px",
+                      marginTop: "16px",
                       color: "#1e6091",
                       fontWeight: "bold",
                       textDecoration: "none",
@@ -186,13 +196,15 @@ export default function Home() {
       {/* ================= ENVIOS ================= */}
       <section
         style={{
-          backgroundColor: "#eef4f8",
-          padding: "70px 20px",
+          background:
+            "linear-gradient(135deg, #eef4f8 0%, #d9eaf7 100%)",
+          padding: "80px 20px",
           textAlign: "center",
         }}
       >
         <h2 style={{ color: "#0a3d62" }}>🚚 Envíos a nivel nacional</h2>
-        <p style={{ maxWidth: "700px", margin: "auto" }}>
+
+        <p style={{ maxWidth: "720px", margin: "18px auto", fontSize: "1.05rem" }}>
           Realizamos envíos seguros a toda Colombia.  
           El costo depende de la ciudad, cantidad de peces y transportadora.
         </p>
@@ -204,7 +216,7 @@ export default function Home() {
           backgroundColor: "#0a3d62",
           color: "#ffffff",
           textAlign: "center",
-          padding: "22px",
+          padding: "26px",
         }}
       >
         © {new Date().getFullYear()} Angelfish Discus · Mosquera, Colombia
