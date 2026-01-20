@@ -1,6 +1,109 @@
 "use client";
 import { useState } from "react";
 
+/* ================= COMPONENTE PRODUCT TABS ================= */
+function ProductTabs({ product }: any) {
+  const [activeTab, setActiveTab] = useState("descripcion");
+
+  return (
+    <div
+      style={{
+        maxWidth: "800px",
+        margin: "40px auto",
+        backgroundColor: "#ffffff",
+        borderRadius: "18px",
+        padding: "30px",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
+      }}
+    >
+      {/* TABS */}
+      <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+        {["descripcion", "especificaciones", "resenas"].map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            style={{
+              flex: 1,
+              padding: "12px 0",
+              borderRadius: "12px",
+              border: "none",
+              cursor: "pointer",
+              fontWeight: activeTab === tab ? "bold" : "normal",
+              backgroundColor: activeTab === tab ? "#1e6091" : "#f4f8fb",
+              color: activeTab === tab ? "#ffffff" : "#1e293b",
+              transition: "0.3s",
+            }}
+          >
+            {tab === "descripcion"
+              ? "Descripción"
+              : tab === "especificaciones"
+              ? "Especificaciones"
+              : "Reseñas"}
+          </button>
+        ))}
+      </div>
+
+      {/* CONTENIDO DE LAS TABS */}
+      <div style={{ color: "#334155" }}>
+        {activeTab === "descripcion" && <p>{product.descripcion}</p>}
+        {activeTab === "especificaciones" && (
+          <ul>
+            {product.especificaciones.map((item: string, i: number) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        )}
+        {activeTab === "resenas" && (
+          <div>
+            {product.resenas.map((r: string, i: number) => (
+              <p key={i} style={{ marginBottom: "10px" }}>
+                ⭐ {r}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ================= COMPONENTE FAQ ================= */
+function FaqItem({ item }: any) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      onClick={() => setOpen(!open)}
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "18px",
+        padding: "22px 26px",
+        marginBottom: "20px",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
+        cursor: "pointer",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h3 style={{ margin: 0, color: "#1e6091" }}>{item.title}</h3>
+        <span style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}>
+          ⌄
+        </span>
+      </div>
+
+      {open && (
+        <p style={{ marginTop: "15px", color: "#334155" }}>{item.content}</p>
+      )}
+    </div>
+  );
+}
+
+/* ================= PÁGINA PRINCIPAL ================= */
 export default function Home() {
   return (
     <div
@@ -69,6 +172,25 @@ export default function Home() {
         </p>
       </section>
 
+      {/* ================= PRODUCTO CON TABS ================= */}
+      <ProductTabs
+        product={{
+          descripcion:
+            "Escalar negro premium, elegante y exclusivo. Criado con cuidado profesional.",
+          especificaciones: [
+            "Tamaño: 10-12 cm",
+            "Peso: 50-60 g",
+            "Alimentación: escamas y alimento vivo",
+            "Origen: Colombia",
+          ],
+          resenas: [
+            "Hermoso pez, llegó en perfectas condiciones.",
+            "Muy buena calidad y atención rápida.",
+            "Recomendado 100% para acuarios.",
+          ],
+        }}
+      />
+
       {/* ================= FAQ ================= */}
       <section
         style={{
@@ -110,16 +232,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= BULGARO BLACK ================= */}
-      <section style={{ padding: "90px 20px" }}>
-        <h2 style={{ textAlign: "center", color: "#0a3d62" }}>
-          Bulgáro Black
-        </h2>
-        <p style={{ textAlign: "center" }}>
-          Escalar negro premium, elegante y exclusivo.
-        </p>
-      </section>
-
       {/* ================= FOOTER ================= */}
       <footer
         style={{
@@ -131,44 +243,6 @@ export default function Home() {
       >
         © {new Date().getFullYear()} Angelfish Discus
       </footer>
-    </div>
-  );
-}
-
-/* ================= COMPONENTE FAQ ================= */
-function FaqItem({ item }: any) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div
-      onClick={() => setOpen(!open)}
-      style={{
-        backgroundColor: "#ffffff",
-        borderRadius: "18px",
-        padding: "22px 26px",
-        marginBottom: "20px",
-        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
-        cursor: "pointer",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <h3 style={{ margin: 0, color: "#1e6091" }}>{item.title}</h3>
-        <span style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}>
-          ⌄
-        </span>
-      </div>
-
-      {open && (
-        <p style={{ marginTop: "15px", color: "#334155" }}>
-          {item.content}
-        </p>
-      )}
     </div>
   );
 }
