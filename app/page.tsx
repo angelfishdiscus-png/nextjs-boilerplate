@@ -1,6 +1,15 @@
 "use client";
 import { useState } from "react";
 
+export default function Home() {
+  return (
+    <h1 style={{ color: "red", fontSize: "50px" }}>
+      SI VES ESTO, ESTE ES EL ARCHIVO CORRECTO
+    </h1>
+  );
+}
+
+
 /* ================= FAQ ITEM ================= */
 function FaqItem({ title, children }) {
   const [open, setOpen] = useState(false);
