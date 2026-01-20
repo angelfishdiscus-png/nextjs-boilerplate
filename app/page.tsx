@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-/* ================= FAQ ITEM ================= */
+/* ====== AQUÍ VA FaqItem ====== */
 function FaqItem({ title, children }) {
   const [open, setOpen] = useState(false);
 
@@ -53,7 +53,6 @@ function FaqItem({ title, children }) {
     </div>
   );
 }
-
 /* ================= HOME ================= */
 export default function Home() {
   return (
