@@ -1,8 +1,6 @@
-"use client";
-
 export default function Home() {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933", backgroundColor: "#ffffff" }}>
+    <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933" }}>
 
       {/* HEADER */}
       <header
@@ -14,13 +12,22 @@ export default function Home() {
           borderBottom: "1px solid #e5e7eb",
           padding: "14px 40px",
           display: "flex",
-          justifyContent: "space-between",
           alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          <img src="/logo-angelfish.png" alt="Angelfish Discus" style={{ height: "55px" }} />
-          <strong style={{ color: "#0a3d62" }}>Angelfish Discus</strong>
+          <img
+            src="/logo-angelfish.png"
+            alt="Angelfish Discus"
+            style={{
+              height: "55px",
+              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.15))",
+            }}
+          />
+          <strong style={{ fontSize: "1.2rem", color: "#0a3d62" }}>
+            Angelfish Discus
+          </strong>
         </div>
 
         <a
@@ -28,8 +35,8 @@ export default function Home() {
           target="_blank"
           style={{
             padding: "10px 18px",
-            backgroundColor: "#25D366",
-            color: "#fff",
+            backgroundColor: "#f97316",
+            color: "white",
             borderRadius: "6px",
             textDecoration: "none",
             fontWeight: "bold",
@@ -48,72 +55,99 @@ export default function Home() {
           textAlign: "center",
         }}
       >
-        <h1 style={{ fontSize: "3rem" }}>Escalares Premium en Colombia</h1>
-        <p style={{ maxWidth: "700px", margin: "20px auto" }}>
-          Criadores especializados en peces ángel con genética seleccionada,
-          excelente salud y asesoría profesional.
+        <h1 style={{ fontSize: "3rem", marginBottom: "15px" }}>
+          Escalares Premium en Colombia
+        </h1>
+
+        <p style={{ fontSize: "1.2rem", maxWidth: "750px", margin: "0 auto" }}>
+          Nuestra meta es entregar la mejor variedad de peces ángel (escalares) y discos,
+          con genética seleccionada, excelente salud y asesoría profesional.
         </p>
-        <p>📍 Mosquera – Cundinamarca</p>
+
+        <p style={{ marginTop: "15px", opacity: 0.9 }}>
+          📍 Mosquera · Cerca de Bogotá
+        </p>
       </section>
 
-      {/* BÚLGARO BLACK */}
-      <section style={{ padding: "80px 20px", backgroundColor: "#f8fafc" }}>
-        <div style={{ maxWidth: "1100px", margin: "auto" }}>
-          <h2 style={{ textAlign: "center", color: "#0a3d62" }}>
-            🖤 Escalar Búlgaro Black
-          </h2>
+      {/* GALERÍA / VARIEDADES */}
+      <section style={{ padding: "70px 20px", backgroundColor: "#f8fafc" }}>
+        <h2 style={{ textAlign: "center", color: "#0a3d62", fontSize: "2.2rem" }}>
+          Variedades Destacadas
+        </h2>
 
-          <p style={{ textAlign: "center", marginBottom: "50px" }}>
-            Variedad premium de color negro intenso, genética seleccionada y
-            crianza profesional en Colombia.
-          </p>
+        <div
+          style={{
+            marginTop: "50px",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: "30px",
+            maxWidth: "1100px",
+            marginInline: "auto",
+          }}
+        >
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "40px",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="/bulgaro-black-1.png"
-              alt="Búlgaro Black adulto"
+          {/* CARD */}
+          {[
+            {
+              img: "/red-devil.jpg",
+              title: "Escalar Red Devil",
+              text: "Variedad premium de color intenso, crianza selectiva y alta demanda.",
+            },
+            {
+              img: "/albino.jpg",
+              title: "Escalar Albino",
+              text: "Ejemplares elegantes, muy exclusivos y de gran impacto visual.",
+            },
+            {
+              img: "/full-black.jpg",
+              title: "Escalar Full Black",
+              text: "Negro profundo, ideal para acuarios de exhibición.",
+            },
+          ].map((fish, i) => (
+            <div
+              key={i}
               style={{
-                width: "100%",
-                borderRadius: "16px",
-                boxShadow: "0 12px 30px rgba(0,0,0,0.2)",
+                backgroundColor: "white",
+                borderRadius: "14px",
+                overflow: "hidden",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+                transition: "transform 0.3s",
               }}
-            />
-
-            <div style={{ textAlign: "center" }}>
+            >
               <img
-                src="/bulgaro-black-2.png"
-                alt="Búlgaro Black juvenil"
+                src={fish.img}
+                alt={fish.title}
                 style={{
                   width: "100%",
-                  borderRadius: "16px",
-                  boxShadow: "0 12px 30px rgba(0,0,0,0.2)",
-                  marginBottom: "25px",
+                  height: "220px",
+                  objectFit: "cover",
                 }}
               />
 
-              <a
-                href="https://wa.me/573208880555"
-                target="_blank"
-                style={{
-                  padding: "14px 32px",
-                  backgroundColor: "#000",
-                  color: "#fff",
-                  borderRadius: "30px",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                Consultar disponibilidad
-              </a>
+              <div style={{ padding: "20px" }}>
+                <h3 style={{ color: "#0a3d62" }}>{fish.title}</h3>
+                <p style={{ fontSize: "0.95rem", marginBottom: "15px" }}>
+                  {fish.text}
+                </p>
+
+                <a
+                  href="https://wa.me/573208880555"
+                  target="_blank"
+                  style={{
+                    display: "inline-block",
+                    padding: "10px 16px",
+                    backgroundColor: "#0a3d62",
+                    color: "white",
+                    borderRadius: "6px",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Consultar disponibilidad
+                </a>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -123,7 +157,7 @@ export default function Home() {
           backgroundColor: "#0a3d62",
           color: "white",
           textAlign: "center",
-          padding: "20px",
+          padding: "25px",
         }}
       >
         © {new Date().getFullYear()} Angelfish Discus · Mosquera, Colombia
