@@ -164,3 +164,57 @@ export default function Home() {
     </div>
   );
 }
+<section className="section">
+  <h2>Variedades Destacadas</h2>
+
+  <div className="cards">
+    <div className="card">
+      <img src="/red-devil.jpg" alt="Escalar Red Devil" />
+      <div className="card-content">
+        <h3>Escalar Red Devil</h3>
+        <p>
+          Variedad premium de intenso color rojo, crianza selectiva y excelente
+          genética.
+        </p>
+        <a
+          href="https://wa.me/573208880555"
+          target="_blank"
+        >
+          Consultar disponibilidad
+        </a>
+      </div>
+    </div>
+
+    <div className="card">
+      <img src="/albino.jpg" alt="Escalar Albino" />
+      <div className="card-content">
+        <h3>Escalar Albino</h3>
+        <p>
+          Escalar elegante de tonos claros, ideal para acuarios de exhibición.
+        </p>
+        <a
+          href="https://wa.me/573208880555"
+          target="_blank"
+        >
+          Consultar disponibilidad
+        </a>
+      </div>
+    </div>
+
+    <div className="card">
+      <img src="/full-black.jpg" alt="Escalar Full Black" />
+      <div className="card-content">
+        <h3>Escalar Full Black</h3>
+        <p>
+          Color negro profundo, muy solicitado por criadores y aficionados.
+        </p>
+        <a
+          href="https://wa.me/573208880555"
+          target="_blank"
+        >
+          Consultar disponibilidad
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
