@@ -1,7 +1,9 @@
+"use client";
+
 export default function Home() {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933" }}>
-      
+    <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933", backgroundColor: "#ffffff" }}>
+
       {/* HEADER */}
       <header
         style={{
@@ -10,26 +12,15 @@ export default function Home() {
           zIndex: 100,
           backgroundColor: "#ffffff",
           borderBottom: "1px solid #e5e7eb",
-          padding: "12px 40px",
+          padding: "14px 40px",
           display: "flex",
-          alignItems: "center",
           justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          <img
-            src="/logo-angelfish.png"
-            alt="Angelfish Discus Logo"
-            style={{
-              height: "55px",
-              width: "auto",
-              objectFit: "contain",
-              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.15))",
-            }}
-          />
-          <strong style={{ fontSize: "1.2rem", color: "#0a3d62" }}>
-            Angelfish Discus
-          </strong>
+          <img src="/logo-angelfish.png" alt="Angelfish Discus" style={{ height: "55px" }} />
+          <strong style={{ color: "#0a3d62" }}>Angelfish Discus</strong>
         </div>
 
         <a
@@ -38,7 +29,7 @@ export default function Home() {
           style={{
             padding: "10px 18px",
             backgroundColor: "#25D366",
-            color: "white",
+            color: "#fff",
             borderRadius: "6px",
             textDecoration: "none",
             fontWeight: "bold",
@@ -53,100 +44,77 @@ export default function Home() {
         style={{
           background: "linear-gradient(135deg, #0a3d62, #1e6091)",
           color: "white",
-          padding: "80px 20px",
+          padding: "90px 20px",
           textAlign: "center",
         }}
       >
-        <h1 style={{ fontSize: "2.8rem", marginBottom: "15px" }}>
-          Escalares de Alta Calidad en Colombia
-        </h1>
-        <p style={{ fontSize: "1.2rem", maxWidth: "700px", margin: "0 auto" }}>
-          Nuestra meta es entregar la mejor variedad de peces ángel (escalares) y discos,
-          con salud garantizada, genética seleccionada y asesoría profesional.
+        <h1 style={{ fontSize: "3rem" }}>Escalares Premium en Colombia</h1>
+        <p style={{ maxWidth: "700px", margin: "20px auto" }}>
+          Criadores especializados en peces ángel con genética seleccionada,
+          excelente salud y asesoría profesional.
         </p>
-
-        <p style={{ marginTop: "15px", fontSize: "1rem", opacity: 0.9 }}>
-          📍 Mosquera – cerca de Bogotá, Colombia
-        </p>
+        <p>📍 Mosquera – Cundinamarca</p>
       </section>
 
-      {/* SOBRE NOSOTROS */}
-      <section style={{ padding: "60px 20px", maxWidth: "1000px", margin: "auto" }}>
-        <h2 style={{ color: "#0a3d62" }}>🐠 ¿Quiénes somos?</h2>
-        <p>
-          En <strong>Angelfish Discus</strong> nos especializamos en la cría responsable
-          de peces ornamentales. Nuestro enfoque principal son los
-          <strong> escalares</strong> y próximamente <strong>discos</strong>,
-          criados con parámetros controlados y excelente alimentación.
-        </p>
-        <p>
-          No solo vendemos peces, acompañamos a nuestros clientes con asesoría real
-          antes y después de la compra.
-        </p>
-      </section>
+      {/* BÚLGARO BLACK */}
+      <section style={{ padding: "80px 20px", backgroundColor: "#f8fafc" }}>
+        <div style={{ maxWidth: "1100px", margin: "auto" }}>
+          <h2 style={{ textAlign: "center", color: "#0a3d62" }}>
+            🖤 Escalar Búlgaro Black
+          </h2>
 
-      {/* ESCALARES */}
-      <section
-        style={{
-          backgroundColor: "#f8fafc",
-          padding: "60px 20px",
-        }}
-      >
-        <div style={{ maxWidth: "1000px", margin: "auto" }}>
-          <h2 style={{ color: "#0a3d62" }}>🐟 Escalares disponibles</h2>
-
-          <ul>
-            <li>Red Devil</li>
-            <li>Búlgaro Avatar</li>
-            <li>Full Black Blushing</li>
-            <li>Albino</li>
-            <li>Red Devil Albino</li>
-          </ul>
-
-          <p>
-            <strong>Tamaños:</strong><br />
-            • 2 – 3 cm (juveniles)<br />
-            • 4 – 6 cm (medianos)<br />
-            • Ejemplares grandes: <em>solo por WhatsApp</em>
+          <p style={{ textAlign: "center", marginBottom: "50px" }}>
+            Variedad premium de color negro intenso, genética seleccionada y
+            crianza profesional en Colombia.
           </p>
 
-          <p>
-            <strong>Precios:</strong><br />
-            • Escalares comunes: <strong>desde $5.000 COP</strong><br />
-            • Variedades especiales: <strong>desde $10.000 COP</strong><br />
-            <em>Descuentos por cantidad (mayoristas).</em>
-          </p>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: "40px",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src="/bulgaro-black-1.png"
+              alt="Búlgaro Black adulto"
+              style={{
+                width: "100%",
+                borderRadius: "16px",
+                boxShadow: "0 12px 30px rgba(0,0,0,0.2)",
+              }}
+            />
+
+            <div style={{ textAlign: "center" }}>
+              <img
+                src="/bulgaro-black-2.png"
+                alt="Búlgaro Black juvenil"
+                style={{
+                  width: "100%",
+                  borderRadius: "16px",
+                  boxShadow: "0 12px 30px rgba(0,0,0,0.2)",
+                  marginBottom: "25px",
+                }}
+              />
+
+              <a
+                href="https://wa.me/573208880555"
+                target="_blank"
+                style={{
+                  padding: "14px 32px",
+                  backgroundColor: "#000",
+                  color: "#fff",
+                  borderRadius: "30px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                Consultar disponibilidad
+              </a>
+            </div>
+          </div>
         </div>
-      </section>
-
-      {/* CUIDADOS */}
-      <section style={{ padding: "60px 20px", maxWidth: "1000px", margin: "auto" }}>
-        <h2 style={{ color: "#0a3d62" }}>💧 Cuidados básicos</h2>
-        <ul>
-          <li>Filtración constante y eficiente</li>
-          <li>Iluminación moderada</li>
-          <li>pH ideal: 6.5 – 7.2</li>
-          <li>Temperatura: 26 – 28 °C</li>
-          <li>Cambios parciales de agua semanales</li>
-        </ul>
-      </section>
-
-      {/* ENVIOS */}
-      <section
-        style={{
-          backgroundColor: "#eef4f8",
-          padding: "50px 20px",
-          textAlign: "center",
-        }}
-      >
-        <h2 style={{ color: "#0a3d62" }}>🚚 Envíos a nivel nacional</h2>
-        <p>
-          Realizamos envíos en toda Colombia.  
-          El valor depende de la ciudad, cantidad de peces y transportadora.
-        </p>
-        <p>
-          Escríbenos por WhatsApp y te cotizamos sin compromiso.
-        </p>
       </section>
 
       {/* FOOTER */}
@@ -156,7 +124,6 @@ export default function Home() {
           color: "white",
           textAlign: "center",
           padding: "20px",
-          marginTop: "40px",
         }}
       >
         © {new Date().getFullYear()} Angelfish Discus · Mosquera, Colombia
@@ -164,58 +131,3 @@ export default function Home() {
     </div>
   );
 }
-<section className="section">
-  <h2>Variedades Destacadas</h2>
-
-  <div className="cards">
-    <div className="card">
-      <img src="/red-devil.jpg" alt="Escalar Red Devil" />
-      <div className="card-content">
-        <h3>Escalar Red Devil</h3>
-        <p>
-          Variedad premium de intenso color rojo, crianza selectiva y excelente
-          genética.
-        </p>
-        <a
-          href="https://wa.me/573208880555"
-          target="_blank"
-        >
-          Consultar disponibilidad
-        </a>
-      </div>
-    </div>
-
-    <div className="card">
-      <img src="/albino.jpg" alt="Escalar Albino" />
-      <div className="card-content">
-        <h3>Escalar Albino</h3>
-        <p>
-          Escalar elegante de tonos claros, ideal para acuarios de exhibición.
-        </p>
-        <a
-          href="https://wa.me/573208880555"
-          target="_blank"
-        >
-          Consultar disponibilidad
-        </a>
-      </div>
-    </div>
-
-    <div className="card">
-      <img src="/full-black.jpg" alt="Escalar Full Black" />
-      <div className="card-content">
-        <h3>Escalar Full Black</h3>
-        <p>
-          Color negro profundo, muy solicitado por criadores y aficionados.
-        </p>
-        <a
-          href="https://wa.me/573208880555"
-          target="_blank"
-        >
-          Consultar disponibilidad
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
