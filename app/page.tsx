@@ -1,7 +1,47 @@
 "use client";
 import { useState } from "react";
 export default function Home() {
-  return (
+  return ({/* ================= FAQ ================= */}
+<section
+  style={{
+    background: "linear-gradient(135deg, #f4f8fb 0%, #e6f0f8 100%)",
+    padding: "90px 20px",
+  }}
+>
+  <div style={{ maxWidth: "1000px", margin: "auto" }}>
+    <h2
+      style={{
+        textAlign: "center",
+        color: "#0a3d62",
+        fontSize: "2.4rem",
+        marginBottom: "50px",
+      }}
+    >
+      Preguntas Frecuentes
+    </h2>
+
+    {[
+      {
+        title: "⏱️ Tiempos de entrega y forma de envío",
+        content:
+          "Realizamos envíos a nivel nacional dentro de Colombia. El tiempo de entrega depende de la ciudad y la transportadora, generalmente entre 24 y 48 horas.",
+      },
+      {
+        title: "🚚 Envío de peces y garantía",
+        content:
+          "Los peces se envían con empaque especializado, oxígeno y aislamiento térmico. Garantizamos que los peces salen vivos y en óptimas condiciones.",
+      },
+      {
+        title: "📍 ¿Tienen punto físico?",
+        content:
+          "Estamos ubicados en Mosquera, Cundinamarca. Las visitas se realizan solo con cita previa.",
+      },
+    ].map((item, index) => (
+      <FaqItem key={index} item={item} />
+    ))}
+  </div>
+</section>
+
     <div
       style={{
         fontFamily: "Arial, sans-serif",
@@ -453,4 +493,105 @@ export default function Home() {
       </footer>
     </div>
   );
+function FaqItem({ item }: any) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      onClick={() => setOpen(!open)}
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "18px",
+        padding: "22px 26px",
+        marginBottom: "20px",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h3 style={{ color: "#1e6091", margin: 0 }}>{item.title}</h3>
+
+        <span
+          style={{
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.3s ease",
+          }}
+        >
+          ⌄
+        </span>
+      </div>
+
+      {open && (
+        <p
+          style={{
+            marginTop: "15px",
+            fontSize: "1.05rem",
+            lineHeight: "1.7",
+            color: "#334155",
+          }}
+        >
+          {item.content}
+        </p>
+      )}
+    </div>
+  );
 }
+}
+function FaqItem({ item }: any) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      onClick={() => setOpen(!open)}
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "18px",
+        padding: "22px 26px",
+        marginBottom: "20px",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h3 style={{ color: "#1e6091", margin: 0 }}>{item.title}</h3>
+
+        <span
+          style={{
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.3s ease",
+          }}
+        >
+          ⌄
+        </span>
+      </div>
+
+      {open && (
+        <p
+          style={{
+            marginTop: "15px",
+            fontSize: "1.05rem",
+            lineHeight: "1.7",
+            color: "#334155",
+          }}
+        >
+          {item.content}
+        </p>
+      )}
+    </div>
+  );
+}
+
