@@ -1,50 +1,8 @@
-"use client";
-import { useEffect, useRef } from "react";
-
 export default function Home() {
-  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    sectionsRef.current.forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const sectionStyle = {
-    opacity: 0,
-    transform: "translateY(40px)",
-    transition: "all 0.8s ease",
-  };
-
-  const visibleStyle = `
-    .visible {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
-    }
-  `;
-
   return (
     <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933" }}>
-      <style>{visibleStyle}</style>
-
-      {/* HEADER */}
+      
+      {/* ================= HEADER ================= */}
       <header
         style={{
           position: "sticky",
@@ -52,22 +10,23 @@ export default function Home() {
           zIndex: 100,
           backgroundColor: "#ffffff",
           borderBottom: "1px solid #e5e7eb",
-          padding: "14px 40px",
+          padding: "12px 40px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <img
             src="/logo-angelfish.png"
-            alt="Angelfish Discus"
+            alt="Angelfish Discus Logo"
             style={{
-              height: "58px",
-              filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.2))",
+              height: "55px",
+              objectFit: "contain",
+              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.15))",
             }}
           />
-          <strong style={{ fontSize: "1.25rem", color: "#0a3d62" }}>
+          <strong style={{ fontSize: "1.2rem", color: "#0a3d62" }}>
             Angelfish Discus
           </strong>
         </div>
@@ -76,10 +35,10 @@ export default function Home() {
           href="https://wa.me/573208880555"
           target="_blank"
           style={{
-            padding: "10px 20px",
+            padding: "10px 18px",
             backgroundColor: "#25D366",
             color: "white",
-            borderRadius: "8px",
+            borderRadius: "6px",
             textDecoration: "none",
             fontWeight: "bold",
           }}
@@ -88,106 +47,138 @@ export default function Home() {
         </a>
       </header>
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
       <section
-        ref={(el) => (sectionsRef.current[0] = el)}
         style={{
-          ...sectionStyle,
           background: "linear-gradient(135deg, #0a3d62, #1e6091)",
           color: "white",
-          padding: "100px 20px",
+          padding: "80px 20px",
           textAlign: "center",
         }}
       >
-        <h1 style={{ fontSize: "3rem", marginBottom: "20px" }}>
-          Escalares Premium en Colombia
+        <h1 style={{ fontSize: "2.8rem", marginBottom: "15px" }}>
+          Escalares de Alta Calidad en Colombia
         </h1>
-        <p style={{ maxWidth: "800px", margin: "0 auto", fontSize: "1.25rem" }}>
-          Criadores especializados en peces ángel con genética seleccionada,
-          excelente salud y asesoría profesional real.
+
+        <p style={{ fontSize: "1.2rem", maxWidth: "700px", margin: "0 auto" }}>
+          Criadores especializados en escalares premium con genética seleccionada
+          y asesoría profesional real.
         </p>
-        <p style={{ marginTop: "18px", opacity: 0.9 }}>
-          📍 Mosquera – Cundinamarca, Colombia
+
+        <p style={{ marginTop: "15px", opacity: 0.9 }}>
+          📍 Mosquera – cerca de Bogotá, Colombia
         </p>
       </section>
 
-      {/* VARIEDADES */}
+      {/* ================= SOBRE NOSOTROS ================= */}
+      <section style={{ padding: "60px 20px", maxWidth: "1000px", margin: "auto" }}>
+        <h2 style={{ color: "#0a3d62" }}>🐠 ¿Quiénes somos?</h2>
+        <p>
+          En <strong>Angelfish Discus</strong> nos especializamos en la cría
+          responsable de peces ornamentales, enfocados principalmente en
+          <strong> escalares</strong> y próximamente <strong>discos</strong>.
+        </p>
+        <p>
+          Criamos peces fuertes, sanos y bien adaptados, con acompañamiento real
+          antes y después de la compra.
+        </p>
+      </section>
+
+      {/* ================= BÚLGARO BLACK ================= */}
       <section
-        ref={(el) => (sectionsRef.current[1] = el)}
         style={{
-          ...sectionStyle,
-          backgroundColor: "#f8fafc",
+          backgroundColor: "#ffffff",
           padding: "80px 20px",
         }}
       >
-        <div style={{ maxWidth: "1100px", margin: "auto" }}>
+        <div style={{ maxWidth: "1000px", margin: "auto" }}>
           <h2
             style={{
               color: "#0a3d62",
               textAlign: "center",
-              marginBottom: "50px",
+              marginBottom: "20px",
             }}
           >
-            Variedades Destacadas
+            🖤 Escalar Búlgaro Black
           </h2>
+
+          <p style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 40px" }}>
+            Variedad premium de color negro intenso, genética seleccionada y
+            crianza profesional en Colombia.
+          </p>
 
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "35px",
+              gap: "30px",
+              alignItems: "center",
             }}
           >
-            {[
-              {
-                img: "/red-devil.jpg",
-                title: "Escalar Red Devil",
-                text: "Variedad premium de intenso color rojo, genética seleccionada.",
-              },
-              {
-                img: "/albino.jpg",
-                title: "Escalar Albino",
-                text: "Elegante, exclusivo y llamativo.",
-              },
-              {
-                img: "/full-black.jpg",
-                title: "Escalar Full Black",
-                text: "Negro profundo para acuarios de exhibición.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="card"
+            <img
+              src="/bulgaro-black-1.png"
+              alt="Escalar Búlgaro Black"
+              style={{
+                width: "100%",
+                borderRadius: "14px",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+              }}
+            />
+
+            <div>
+              <img
+                src="/bulgaro-black-2.png"
+                alt="Escalar Búlgaro Black juvenil"
                 style={{
-                  backgroundColor: "white",
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
-                  transition: "all 0.3s ease",
+                  width: "100%",
+                  borderRadius: "14px",
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+                  marginBottom: "20px",
+                }}
+              />
+
+              <a
+                href="https://wa.me/573208880555"
+                target="_blank"
+                style={{
+                  display: "inline-block",
+                  padding: "14px 28px",
+                  backgroundColor: "#000000",
+                  color: "#ffffff",
+                  borderRadius: "30px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
                 }}
               >
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
-                />
-                <div style={{ padding: "22px" }}>
-                  <h3 style={{ color: "#0a3d62" }}>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              </div>
-            ))}
+                Consultar disponibilidad
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ================= ENVIOS ================= */}
+      <section
+        style={{
+          backgroundColor: "#eef4f8",
+          padding: "50px 20px",
+          textAlign: "center",
+        }}
+      >
+        <h2 style={{ color: "#0a3d62" }}>🚚 Envíos a nivel nacional</h2>
+        <p>
+          Envíos seguros a toda Colombia.  
+          El valor depende de la ciudad y cantidad de peces.
+        </p>
+      </section>
+
+      {/* ================= FOOTER ================= */}
       <footer
         style={{
           backgroundColor: "#0a3d62",
           color: "white",
           textAlign: "center",
-          padding: "22px",
+          padding: "20px",
         }}
       >
         © {new Date().getFullYear()} Angelfish Discus · Mosquera, Colombia
