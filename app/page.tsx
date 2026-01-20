@@ -1,8 +1,50 @@
-export default function Home() {
-  return (
-    <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933", backgroundColor: "#ffffff" }}>
+"use client";
+import { useEffect, useRef } from "react";
 
-      {/* ================= HEADER ================= */}
+export default function Home() {
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    sectionsRef.current.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const sectionStyle = {
+    opacity: 0,
+    transform: "translateY(40px)",
+    transition: "all 0.8s ease",
+  };
+
+  const visibleStyle = `
+    .visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    }
+  `;
+
+  return (
+    <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933" }}>
+      <style>{visibleStyle}</style>
+
+      {/* HEADER */}
       <header
         style={{
           position: "sticky",
@@ -19,7 +61,7 @@ export default function Home() {
         <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
           <img
             src="/logo-angelfish.png"
-            alt="Angelfish Discus Logo"
+            alt="Angelfish Discus"
             style={{
               height: "58px",
               filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.2))",
@@ -36,7 +78,7 @@ export default function Home() {
           style={{
             padding: "10px 20px",
             backgroundColor: "#25D366",
-            color: "#ffffff",
+            color: "white",
             borderRadius: "8px",
             textDecoration: "none",
             fontWeight: "bold",
@@ -46,11 +88,13 @@ export default function Home() {
         </a>
       </header>
 
-      {/* ================= HERO ================= */}
+      {/* HERO */}
       <section
+        ref={(el) => (sectionsRef.current[0] = el)}
         style={{
+          ...sectionStyle,
           background: "linear-gradient(135deg, #0a3d62, #1e6091)",
-          color: "#ffffff",
+          color: "white",
           padding: "100px 20px",
           textAlign: "center",
         }}
@@ -58,51 +102,20 @@ export default function Home() {
         <h1 style={{ fontSize: "3rem", marginBottom: "20px" }}>
           Escalares Premium en Colombia
         </h1>
-
-        <p
-          style={{
-            maxWidth: "800px",
-            margin: "0 auto",
-            fontSize: "1.25rem",
-            lineHeight: "1.6",
-          }}
-        >
+        <p style={{ maxWidth: "800px", margin: "0 auto", fontSize: "1.25rem" }}>
           Criadores especializados en peces ángel con genética seleccionada,
           excelente salud y asesoría profesional real.
         </p>
-
         <p style={{ marginTop: "18px", opacity: 0.9 }}>
           📍 Mosquera – Cundinamarca, Colombia
         </p>
       </section>
 
-      {/* ================= SOBRE NOSOTROS ================= */}
+      {/* VARIEDADES */}
       <section
+        ref={(el) => (sectionsRef.current[1] = el)}
         style={{
-          padding: "70px 20px",
-          maxWidth: "1000px",
-          margin: "auto",
-        }}
-      >
-        <h2 style={{ color: "#0a3d62", marginBottom: "20px" }}>
-          🐠 ¿Quiénes somos?
-        </h2>
-        <p>
-          En <strong>Angelfish Discus</strong> nos dedicamos a la cría responsable
-          de peces ornamentales, enfocados principalmente en
-          <strong> escalares</strong> de alta calidad y próximamente
-          <strong> discos</strong>.
-        </p>
-        <p>
-          Nuestros peces son criados con parámetros estables, alimentación
-          especializada y manejo profesional, garantizando ejemplares sanos,
-          fuertes y adaptados.
-        </p>
-      </section>
-
-      {/* ================= VARIEDADES ================= */}
-      <section
-        style={{
+          ...sectionStyle,
           backgroundColor: "#f8fafc",
           padding: "80px 20px",
         }}
@@ -125,32 +138,32 @@ export default function Home() {
               gap: "35px",
             }}
           >
-            {/* CARD */}
             {[
               {
                 img: "/red-devil.jpg",
                 title: "Escalar Red Devil",
-                text: "Variedad premium de intenso color rojo, genética seleccionada y alta demanda.",
+                text: "Variedad premium de intenso color rojo, genética seleccionada.",
               },
               {
                 img: "/albino.jpg",
                 title: "Escalar Albino",
-                text: "Elegante, llamativo y perfecto para acuarios de exhibición.",
+                text: "Elegante, exclusivo y llamativo.",
               },
               {
                 img: "/full-black.jpg",
                 title: "Escalar Full Black",
-                text: "Color negro profundo, ideal para proyectos de cría y exhibición.",
+                text: "Negro profundo para acuarios de exhibición.",
               },
             ].map((item, index) => (
               <div
                 key={index}
+                className="card"
                 style={{
-                  backgroundColor: "#ffffff",
+                  backgroundColor: "white",
                   borderRadius: "16px",
                   overflow: "hidden",
                   boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
-                  transition: "transform 0.3s ease",
+                  transition: "all 0.3s ease",
                 }}
               >
                 <img
@@ -159,23 +172,8 @@ export default function Home() {
                   style={{ width: "100%", height: "220px", objectFit: "cover" }}
                 />
                 <div style={{ padding: "22px" }}>
-                  <h3 style={{ color: "#0a3d62", marginBottom: "10px" }}>
-                    {item.title}
-                  </h3>
+                  <h3 style={{ color: "#0a3d62" }}>{item.title}</h3>
                   <p>{item.text}</p>
-                  <a
-                    href="https://wa.me/573208880555"
-                    target="_blank"
-                    style={{
-                      display: "inline-block",
-                      marginTop: "14px",
-                      color: "#1e6091",
-                      fontWeight: "bold",
-                      textDecoration: "none",
-                    }}
-                  >
-                    Consultar disponibilidad →
-                  </a>
                 </div>
               </div>
             ))}
@@ -183,26 +181,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= ENVIOS ================= */}
-      <section
-        style={{
-          backgroundColor: "#eef4f8",
-          padding: "70px 20px",
-          textAlign: "center",
-        }}
-      >
-        <h2 style={{ color: "#0a3d62" }}>🚚 Envíos a nivel nacional</h2>
-        <p style={{ maxWidth: "700px", margin: "auto" }}>
-          Realizamos envíos seguros a toda Colombia.  
-          El costo depende de la ciudad, cantidad de peces y transportadora.
-        </p>
-      </section>
-
-      {/* ================= FOOTER ================= */}
+      {/* FOOTER */}
       <footer
         style={{
           backgroundColor: "#0a3d62",
-          color: "#ffffff",
+          color: "white",
           textAlign: "center",
           padding: "22px",
         }}
