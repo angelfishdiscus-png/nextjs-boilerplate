@@ -252,6 +252,15 @@ function ProductTabs() {
     </div>
   </div>
 </section>
+    const badgeStyle = {
+  padding: "10px 16px",
+  backgroundColor: "#e6f0f8",
+  color: "#0a3d62",
+  borderRadius: "14px",
+  fontWeight: "600",
+  boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+};
+
 {/* ================= BULGARO BLACK ================= */}
 <section
   style={{
