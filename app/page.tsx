@@ -1,24 +1,26 @@
 "use client";
 import { useState } from "react";
+
+/* ================= FAQ BUTTON ================= */
 function FaqButton({ title, children }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div style={{ marginBottom: "20px" }}>
+    <div style={{ marginBottom: "22px" }}>
       <button
         onClick={() => setOpen(!open)}
         style={{
           width: "100%",
           textAlign: "left",
-          padding: "16px 20px",
+          padding: "18px 22px",
           background: "linear-gradient(135deg, #1e6091, #0a3d62)",
           color: "#ffffff",
           border: "none",
-          borderRadius: "14px",
+          borderRadius: "16px",
           fontSize: "1.05rem",
           fontWeight: "bold",
           cursor: "pointer",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
+          boxShadow: "0 8px 22px rgba(0,0,0,0.25)",
         }}
       >
         {title}
@@ -28,10 +30,10 @@ function FaqButton({ title, children }) {
         <div
           style={{
             marginTop: "12px",
-            padding: "18px 20px",
+            padding: "20px 22px",
             backgroundColor: "#ffffff",
-            borderRadius: "14px",
-            boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+            borderRadius: "16px",
+            boxShadow: "0 12px 28px rgba(0,0,0,0.18)",
             color: "#334155",
             lineHeight: "1.7",
           }}
@@ -42,6 +44,8 @@ function FaqButton({ title, children }) {
     </div>
   );
 }
+
+/* ================= HOME ================= */
 export default function Home() {
   return (
     <div
@@ -51,58 +55,8 @@ export default function Home() {
         backgroundColor: "#f4f8fb",
       }}
     >
-      import { useState } from "react";
 
-function FaqButton({ title, children }) {
-  const [open, setOpen] = useState(false);
 
-  return (
-    <div
-      onClick={() => setOpen(!open)}
-      style={{
-        backgroundColor: "#ffffff",
-        borderRadius: "18px",
-        padding: "22px 26px",
-        marginBottom: "22px",
-        boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <h3 style={{ margin: 0, color: "#1e6091" }}>{title}</h3>
-        <span
-          style={{
-            fontSize: "1.4rem",
-            transform: open ? "rotate(180deg)" : "rotate(0deg)",
-            transition: "transform 0.3s ease",
-          }}
-        >
-          ⌄
-        </span>
-      </div>
-
-      {open && (
-        <p
-          style={{
-            marginTop: "15px",
-            fontSize: "1.05rem",
-            lineHeight: "1.7",
-            color: "#334155",
-          }}
-        >
-          {children}
-        </p>
-      )}
-    </div>
-  );
-}
 
       {/* ================= HEADER ================= */}
       <header
@@ -206,49 +160,52 @@ function FaqButton({ title, children }) {
           fuertes y bien adaptados.
         </p>
       </section>
-{/* ================= FAQ ================= */}
-<section
-  style={{
-    background: "linear-gradient(135deg, #f4f8fb 0%, #e6f0f8 100%)",
-    padding: "90px 20px",
-  }}
->
-  <div style={{ maxWidth: "1000px", margin: "auto" }}>
-    <h2
-      style={{
-        textAlign: "center",
-        color: "#0a3d62",
-        fontSize: "2.4rem",
-        marginBottom: "50px",
-      }}
-    >
-      Preguntas Frecuentes
-    </h2>
+    {/* ================= FAQ ================= */}
+      <section
+        style={{
+          background: "linear-gradient(135deg, #f4f8fb 0%, #e6f0f8 100%)",
+          padding: "90px 20px",
+        }}
+      >
+        <div style={{ maxWidth: "1000px", margin: "auto" }}>
+          <h2
+            style={{
+              textAlign: "center",
+              color: "#0a3d62",
+              fontSize: "2.4rem",
+              marginBottom: "50px",
+            }}
+          >
+            Preguntas Frecuentes
+          </h2>
 
-    <FaqButton title="⏱️ Tiempos de entrega y forma de envío">
-      Realizamos envíos a nivel nacional dentro de Colombia.
-      El tiempo de entrega depende de la ciudad y la transportadora,
-      generalmente entre <strong>24 y 48 horas</strong> después del despacho.
-      Cada envío se coordina previamente para garantizar la seguridad
-      de los peces.
-    </FaqButton>
+          <FaqButton title="⏱️ Tiempos de entrega y forma de envío">
+            Realizamos envíos a nivel nacional dentro de Colombia.
+            El tiempo de entrega depende de la ciudad y la transportadora,
+            generalmente entre <strong>24 y 48 horas</strong> después del despacho.
+            Cada envío se coordina previamente para garantizar la seguridad
+            de los peces.
+          </FaqButton>
 
-    <FaqButton title="🚚 Envío de peces y garantía">
-      Los peces se envían con empaque especializado, oxígeno y aislamiento
-      térmico. Garantizamos que los peces salen vivos y en óptimas condiciones.
-      Cualquier novedad debe reportarse inmediatamente al momento de recibir
-      el envío.
-    </FaqButton>
+          <FaqButton title="🚚 Envío de peces y garantía">
+            Los peces se envían con empaque especializado, oxígeno y aislamiento
+            térmico. Garantizamos que los peces salen vivos y en óptimas condiciones.
+            Cualquier novedad debe reportarse inmediatamente al momento de recibir
+            el envío.
+          </FaqButton>
 
-    <FaqButton title="📍 ¿Tienen punto físico?">
-      Estamos ubicados en <strong>Mosquera, Cundinamarca</strong>.
-      Angelfish Discus es un <strong>hobby especializado</strong> enfocado
-      en la cría responsable de escalares.
-      Las visitas se realizan únicamente con cita previa.
-    </FaqButton>
-  </div>
-</section>
+          <FaqButton title="📍 ¿Tienen punto físico?">
+            Estamos ubicados en <strong>Mosquera, Cundinamarca</strong>.
+            Angelfish Discus es un <strong>hobby especializado</strong> enfocado
+            en la cría responsable de escalares.
+            Las visitas se realizan únicamente con cita previa.
+          </FaqButton>
+        </div>
+      </section>
 
+    </div>
+  );
+}
 {/* ================= BULGARO BLACK ================= */}
 <section
   style={{
