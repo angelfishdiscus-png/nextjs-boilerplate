@@ -214,8 +214,50 @@ function ProductTabs() {
       Preguntas Frecuentes
     </h2>
 
-    <div style={{ marginBottom: "35px" }}>
-      <h3 style={{ color: "#1e6091", marginBottom: "10px" }}>
+    function FaqButton({ title, content }: any) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "16px",
+        padding: "20px",
+        marginBottom: "20px",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+        cursor: "pointer",
+      }}
+      onClick={() => setOpen(!open)}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h3 style={{ color: "#1e6091", margin: 0 }}>{title}</h3>
+        <span style={{ fontSize: "1.5rem" }}>
+          {open ? "−" : "+"}
+        </span>
+      </div>
+
+      {open && (
+        <p
+          style={{
+            marginTop: "15px",
+            fontSize: "1.05rem",
+            lineHeight: "1.7",
+            color: "#334155",
+          }}
+        >
+          {content}
+        </p>
+      )}
+    </div>
+  );
+}
+
         ⏱️ Tiempos de entrega y forma de envío
       </h3>
       <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
@@ -252,14 +294,7 @@ function ProductTabs() {
     </div>
   </div>
 </section>
-    const badgeStyle = {
-  padding: "10px 16px",
-  backgroundColor: "#e6f0f8",
-  color: "#0a3d62",
-  borderRadius: "14px",
-  fontWeight: "600",
-  boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
-};
+   
 
 {/* ================= BULGARO BLACK ================= */}
 <section
