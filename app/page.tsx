@@ -109,6 +109,149 @@ export default function Home() {
           fuertes y bien adaptados.
         </p>
       </section>
+{/* ================= FAQ ================= */}
+<section
+  style={{
+    background: "linear-gradient(135deg, #f4f8fb 0%, #e6f0f8 100%)",
+    padding: "90px 20px",
+  }}
+>
+  <div style={{ maxWidth: "1000px", margin: "auto" }}>
+    <h2
+      style={{
+        textAlign: "center",
+        color: "#0a3d62",
+        fontSize: "2.4rem",
+        marginBottom: "50px",
+      }}
+    >
+      Preguntas Frecuentes
+    </h2>
+
+    <div style={{ marginBottom: "35px" }}>
+      <h3 style={{ color: "#1e6091", marginBottom: "10px" }}>
+        ⏱️ Tiempos de entrega y forma de envío
+      </h3>
+      <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
+        Realizamos envíos a nivel nacional dentro de Colombia.
+        El tiempo de entrega depende de la ciudad y la transportadora,
+        generalmente entre <strong>24 y 48 horas</strong> después del despacho.
+        Cada envío se coordina previamente para garantizar la seguridad
+        de los peces.
+      </p>
+    </div>
+
+    <div style={{ marginBottom: "35px" }}>
+      <h3 style={{ color: "#1e6091", marginBottom: "10px" }}>
+        🚚 Envío de peces y garantía
+      </h3>
+      <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
+        Los peces se envían con empaque especializado, oxígeno y aislamiento
+        térmico. Garantizamos que los peces salen vivos y en óptimas condiciones.
+        Cualquier novedad debe reportarse inmediatamente al momento de recibir
+        el envío.
+      </p>
+    </div>
+
+    <div>
+      <h3 style={{ color: "#1e6091", marginBottom: "10px" }}>
+        📍 ¿Tienen punto físico?
+      </h3>
+      <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
+        Estamos ubicados en <strong>Mosquera, Cundinamarca</strong>.
+        Angelfish Discus es un <strong>hobby especializado</strong> enfocado
+        en la cría responsable de escalares.
+        Las visitas se realizan únicamente con cita previa.
+      </p>
+    </div>
+  </div>
+</section>
+{/* ================= BULGARO BLACK ================= */}
+<section
+  style={{
+    background: "linear-gradient(135deg, #ffffff 0%, #f4f8fb 100%)",
+    padding: "90px 20px",
+  }}
+>
+  <div style={{ maxWidth: "1100px", margin: "auto" }}>
+    <h2
+      style={{
+        textAlign: "center",
+        color: "#0a3d62",
+        fontSize: "2.6rem",
+        marginBottom: "20px",
+      }}
+    >
+      Bulgáro Black
+    </h2>
+
+    <p
+      style={{
+        textAlign: "center",
+        maxWidth: "850px",
+        margin: "0 auto 50px",
+        fontSize: "1.15rem",
+        lineHeight: "1.7",
+        color: "#334155",
+      }}
+    >
+      Variedad exclusiva de escalar negro con tonalidad profunda y elegante.
+      Criados bajo parámetros estables, excelente salud y gran presencia visual,
+      ideales para acuarios de exhibición y proyectos premium.
+    </p>
+
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+        gap: "40px",
+      }}
+    >
+      <img
+        src="/bulgaro-black-1.png"
+        alt="Bulgáro Black Angelfish"
+        style={{
+          width: "100%",
+          height: "380px",
+          objectFit: "cover",
+          borderRadius: "18px",
+          boxShadow: "0 14px 35px rgba(0,0,0,0.25)",
+        }}
+      />
+
+      <img
+        src="/bulgaro-black-2.png"
+        alt="Bulgáro Black Angelfish"
+        style={{
+          width: "100%",
+          height: "380px",
+          objectFit: "cover",
+          borderRadius: "18px",
+          boxShadow: "0 14px 35px rgba(0,0,0,0.25)",
+        }}
+      />
+    </div>
+
+    <div style={{ textAlign: "center", marginTop: "45px" }}>
+      <a
+        href="https://wa.me/573208880555"
+        target="_blank"
+        style={{
+          display: "inline-block",
+          padding: "14px 30px",
+          background: "linear-gradient(135deg, #1e6091, #0a3d62)",
+          color: "#ffffff",
+          borderRadius: "30px",
+          fontWeight: "bold",
+          textDecoration: "none",
+          boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
+        }}
+      >
+        Consultar disponibilidad
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* ================= VARIEDADES ================= */}
       <section
