@@ -1,29 +1,61 @@
 export default function Home() {
   return (
-    <main style={{ fontFamily: "Arial, sans-serif", color: "#0b1c26" }}>
-      
+    <div style={{ fontFamily: "Arial, sans-serif", color: "#222" }}>
+
+      {/* HEADER */}
+      <header
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 100,
+          background: "#ffffff",
+          borderBottom: "1px solid #eaeaea",
+          padding: "12px 30px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <img src="/next.svg" alt="Angelfish Discus" style={{ height: "45px" }} />
+          <strong style={{ fontSize: "1.2rem", color: "#0a3d62" }}>
+            Angelfish Discus
+          </strong>
+        </div>
+
+        <a
+          href="https://wa.me/573208880555"
+          target="_blank"
+          style={{
+            background: "#25D366",
+            color: "#fff",
+            padding: "10px 18px",
+            borderRadius: "6px",
+            textDecoration: "none",
+            fontWeight: "bold",
+          }}
+        >
+          WhatsApp
+        </a>
+      </header>
+
       {/* HERO */}
       <section
         style={{
-          background: "linear-gradient(135deg, #0a3d62, #1abc9c)",
-          color: "white",
           padding: "80px 20px",
           textAlign: "center",
+          background: "linear-gradient(135deg, #eaf6ff, #ffffff)",
         }}
       >
-        <img
-          src="/next.svg"
-          alt="Angelfish Discus"
-          style={{ width: "260px", marginBottom: "20px" }}
-        />
-
-        <h1 style={{ fontSize: "3rem", marginBottom: "15px" }}>
+        <h1 style={{ fontSize: "2.8rem", color: "#0a3d62" }}>
           Angelfish Discus
         </h1>
-
-        <p style={{ fontSize: "1.2rem", maxWidth: "700px", margin: "0 auto" }}>
-          Criadero especializado en peces ángel de alta calidad.  
-          Escalares saludables, bien formados y con asesoría profesional.
+        <p style={{ fontSize: "1.3rem", maxWidth: "800px", margin: "20px auto" }}>
+          Especialistas en la cría responsable de peces ángel (escalares) de alta
+          calidad, con asesoría profesional y envío seguro a nivel nacional.
+        </p>
+        <p style={{ fontWeight: "bold" }}>
+          📍 Mosquera – Cundinamarca, Colombia
         </p>
 
         <a
@@ -31,103 +63,120 @@ export default function Home() {
           target="_blank"
           style={{
             display: "inline-block",
-            marginTop: "30px",
+            marginTop: "25px",
             padding: "14px 30px",
-            backgroundColor: "#25D366",
+            background: "#25D366",
             color: "#fff",
-            borderRadius: "8px",
+            borderRadius: "6px",
             textDecoration: "none",
             fontWeight: "bold",
             fontSize: "1.1rem",
           }}
         >
-          📲 Cotizar por WhatsApp
+          Contáctanos por WhatsApp
         </a>
       </section>
 
-      {/* VARIEDADES */}
-      <section style={{ padding: "60px 20px", background: "#f5faff" }}>
-        <h2 style={{ textAlign: "center", color: "#0a3d62" }}>
-          Escalares Disponibles
-        </h2>
+      {/* QUIÉNES SOMOS */}
+      <section style={{ padding: "60px 20px", maxWidth: "1100px", margin: "auto" }}>
+        <h2 style={{ color: "#0a3d62" }}>🐠 Quiénes somos</h2>
+        <p>
+          En <strong>Angelfish Discus</strong> somos un emprendimiento colombiano
+          dedicado a la cría y selección de peces ornamentales, enfocados
+          principalmente en <strong>escalares de línea genética cuidada</strong>.
+        </p>
+        <p>
+          Nuestro objetivo es ofrecer peces sanos, bien formados y adaptados,
+          acompañados de asesoría real antes y después de la compra.
+        </p>
+      </section>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "20px",
-            maxWidth: "1100px",
-            margin: "40px auto",
-          }}
-        >
-          {[
-            "Red Devil",
-            "Red Devil Albino",
-            "Full Black Blushing",
-            "Albino",
-            "Búlgaro Avatar",
-          ].map((item) => (
-            <div
-              key={item}
-              style={{
-                background: "white",
-                borderRadius: "12px",
-                padding: "25px",
-                boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-                textAlign: "center",
-              }}
-            >
-              <h3 style={{ color: "#1abc9c" }}>{item}</h3>
-              <p>Calidad premium · Crianza controlada</p>
-            </div>
-          ))}
+      {/* ESCALARES */}
+      <section
+        style={{
+          background: "#f8f9fb",
+          padding: "60px 20px",
+        }}
+      >
+        <div style={{ maxWidth: "1100px", margin: "auto" }}>
+          <h2 style={{ color: "#0a3d62" }}>🐟 Escalares disponibles</h2>
+
+          <ul style={{ columns: 2, maxWidth: "600px" }}>
+            <li>Red Devil</li>
+            <li>Búlgaro Avatar</li>
+            <li>Full Black Blushing</li>
+            <li>Albino</li>
+            <li>Red Devil Albino</li>
+          </ul>
+
+          <p>
+            <strong>Tamaños:</strong><br />
+            • Juveniles (2–3 cm)<br />
+            • Medianos (4–6 cm)<br />
+            • Ejemplares grandes: consultar
+          </p>
+
+          <p>
+            <strong>Precios:</strong><br />
+            • Escalares comunes desde <strong>$5.000 COP</strong><br />
+            • Variedades especiales desde <strong>$10.000 COP</strong>
+          </p>
         </div>
       </section>
 
-      {/* POR QUÉ ELEGIRNOS */}
-      <section style={{ padding: "60px 20px", maxWidth: "1000px", margin: "auto" }}>
-        <h2 style={{ textAlign: "center", color: "#0a3d62" }}>
-          ¿Por qué Angelfish Discus?
-        </h2>
-
-        <ul style={{ fontSize: "1.1rem", lineHeight: "1.8" }}>
-          <li>✔️ Peces sanos y bien adaptados</li>
-          <li>✔️ Alimentación de alta calidad</li>
-          <li>✔️ Asesoría antes y después de la compra</li>
-          <li>✔️ Ubicados en Mosquera – Cundinamarca</li>
-          <li>✔️ Envíos responsables (según condiciones)</li>
+      {/* VALOR DIFERENCIAL */}
+      <section style={{ padding: "60px 20px", maxWidth: "1100px", margin: "auto" }}>
+        <h2 style={{ color: "#0a3d62" }}>⭐ ¿Por qué elegirnos?</h2>
+        <ul>
+          <li>Cría controlada y responsable</li>
+          <li>Peces adaptados y bien alimentados</li>
+          <li>Asesoría personalizada</li>
+          <li>Experiencia real en acuariofilia</li>
+          <li>Envíos seguros en Colombia</li>
         </ul>
       </section>
 
-      {/* CTA FINAL */}
+      {/* CUIDADOS */}
       <section
         style={{
-          background: "#0b1c26",
-          color: "white",
+          background: "#f8f9fb",
           padding: "60px 20px",
-          textAlign: "center",
         }}
       >
-        <h2>¿Buscas escalares de calidad real?</h2>
-        <p>Escríbenos y recibe asesoría directa del criadero.</p>
-
-        <a
-          href="https://wa.me/573208880555"
-          target="_blank"
-          style={{
-            display: "inline-block",
-            marginTop: "20px",
-            padding: "14px 30px",
-            backgroundColor: "#25D366",
-            color: "#fff",
-            borderRadius: "8px",
-            textDecoration: "none",
-            fontWeight: "bold",
-          }}
-        >
-          📲 Hablar por WhatsApp
-        </a>
+        <div style={{ maxWidth: "1100px", margin: "auto" }}>
+          <h2 style={{ color: "#0a3d62" }}>💧 Cuidados básicos</h2>
+          <ul>
+            <li>Temperatura ideal: 26–28°C</li>
+            <li>pH recomendado: 6.5 – 7.2</li>
+            <li>Filtración constante</li>
+            <li>Cambios de agua semanales</li>
+          </ul>
+        </div>
       </section>
-    </main>
+
+      {/* ENVIOS */}
+      <section style={{ padding: "60px 20px", maxWidth: "1100px", margin: "auto" }}>
+        <h2 style={{ color: "#0a3d62" }}>🚚 Envíos</h2>
+        <p>
+          Realizamos envíos a nivel nacional dentro de Colombia. El costo depende
+          de la ciudad, cantidad de peces y transportadora.
+        </p>
+        <p>
+          Escríbenos por WhatsApp para cotizar tu pedido.
+        </p>
+      </section>
+
+      {/* FOOTER */}
+      <footer
+        style={{
+          textAlign: "center",
+          padding: "30px",
+          background: "#0a3d62",
+          color: "#fff",
+        }}
+      >
+        © {new Date().getFullYear()} Angelfish Discus – Mosquera, Colombia
+      </footer>
+    </div>
   );
 }
