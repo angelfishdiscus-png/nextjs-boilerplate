@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933" }}>
+    <div style={{ fontFamily: "Arial, sans-serif", color: "#1f2933", backgroundColor: "#ffffff" }}>
 
-      {/* HEADER */}
+      {/* ================= HEADER ================= */}
       <header
         style={{
           position: "sticky",
@@ -16,16 +16,16 @@ export default function Home() {
           justifyContent: "space-between",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
           <img
             src="/logo-angelfish.png"
-            alt="Angelfish Discus"
+            alt="Angelfish Discus Logo"
             style={{
-              height: "55px",
-              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.15))",
+              height: "58px",
+              filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.2))",
             }}
           />
-          <strong style={{ fontSize: "1.2rem", color: "#0a3d62" }}>
+          <strong style={{ fontSize: "1.25rem", color: "#0a3d62" }}>
             Angelfish Discus
           </strong>
         </div>
@@ -34,10 +34,10 @@ export default function Home() {
           href="https://wa.me/573208880555"
           target="_blank"
           style={{
-            padding: "10px 18px",
-            backgroundColor: "#f97316",
-            color: "white",
-            borderRadius: "6px",
+            padding: "10px 20px",
+            backgroundColor: "#25D366",
+            color: "#ffffff",
+            borderRadius: "8px",
             textDecoration: "none",
             fontWeight: "bold",
           }}
@@ -46,118 +46,165 @@ export default function Home() {
         </a>
       </header>
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
       <section
         style={{
           background: "linear-gradient(135deg, #0a3d62, #1e6091)",
-          color: "white",
-          padding: "90px 20px",
+          color: "#ffffff",
+          padding: "100px 20px",
           textAlign: "center",
         }}
       >
-        <h1 style={{ fontSize: "3rem", marginBottom: "15px" }}>
+        <h1 style={{ fontSize: "3rem", marginBottom: "20px" }}>
           Escalares Premium en Colombia
         </h1>
 
-        <p style={{ fontSize: "1.2rem", maxWidth: "750px", margin: "0 auto" }}>
-          Nuestra meta es entregar la mejor variedad de peces ángel (escalares) y discos,
-          con genética seleccionada, excelente salud y asesoría profesional.
+        <p
+          style={{
+            maxWidth: "800px",
+            margin: "0 auto",
+            fontSize: "1.25rem",
+            lineHeight: "1.6",
+          }}
+        >
+          Criadores especializados en peces ángel con genética seleccionada,
+          excelente salud y asesoría profesional real.
         </p>
 
-        <p style={{ marginTop: "15px", opacity: 0.9 }}>
-          📍 Mosquera · Cerca de Bogotá
+        <p style={{ marginTop: "18px", opacity: 0.9 }}>
+          📍 Mosquera – Cundinamarca, Colombia
         </p>
       </section>
 
-      {/* GALERÍA / VARIEDADES */}
-      <section style={{ padding: "70px 20px", backgroundColor: "#f8fafc" }}>
-        <h2 style={{ textAlign: "center", color: "#0a3d62", fontSize: "2.2rem" }}>
-          Variedades Destacadas
+      {/* ================= SOBRE NOSOTROS ================= */}
+      <section
+        style={{
+          padding: "70px 20px",
+          maxWidth: "1000px",
+          margin: "auto",
+        }}
+      >
+        <h2 style={{ color: "#0a3d62", marginBottom: "20px" }}>
+          🐠 ¿Quiénes somos?
         </h2>
+        <p>
+          En <strong>Angelfish Discus</strong> nos dedicamos a la cría responsable
+          de peces ornamentales, enfocados principalmente en
+          <strong> escalares</strong> de alta calidad y próximamente
+          <strong> discos</strong>.
+        </p>
+        <p>
+          Nuestros peces son criados con parámetros estables, alimentación
+          especializada y manejo profesional, garantizando ejemplares sanos,
+          fuertes y adaptados.
+        </p>
+      </section>
 
-        <div
-          style={{
-            marginTop: "50px",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: "30px",
-            maxWidth: "1100px",
-            marginInline: "auto",
-          }}
-        >
+      {/* ================= VARIEDADES ================= */}
+      <section
+        style={{
+          backgroundColor: "#f8fafc",
+          padding: "80px 20px",
+        }}
+      >
+        <div style={{ maxWidth: "1100px", margin: "auto" }}>
+          <h2
+            style={{
+              color: "#0a3d62",
+              textAlign: "center",
+              marginBottom: "50px",
+            }}
+          >
+            Variedades Destacadas
+          </h2>
 
-          {/* CARD */}
-          {[
-            {
-              img: "/red-devil.jpg",
-              title: "Escalar Red Devil",
-              text: "Variedad premium de color intenso, crianza selectiva y alta demanda.",
-            },
-            {
-              img: "/albino.jpg",
-              title: "Escalar Albino",
-              text: "Ejemplares elegantes, muy exclusivos y de gran impacto visual.",
-            },
-            {
-              img: "/full-black.jpg",
-              title: "Escalar Full Black",
-              text: "Negro profundo, ideal para acuarios de exhibición.",
-            },
-          ].map((fish, i) => (
-            <div
-              key={i}
-              style={{
-                backgroundColor: "white",
-                borderRadius: "14px",
-                overflow: "hidden",
-                boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
-                transition: "transform 0.3s",
-              }}
-            >
-              <img
-                src={fish.img}
-                alt={fish.title}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "35px",
+            }}
+          >
+            {/* CARD */}
+            {[
+              {
+                img: "/red-devil.jpg",
+                title: "Escalar Red Devil",
+                text: "Variedad premium de intenso color rojo, genética seleccionada y alta demanda.",
+              },
+              {
+                img: "/albino.jpg",
+                title: "Escalar Albino",
+                text: "Elegante, llamativo y perfecto para acuarios de exhibición.",
+              },
+              {
+                img: "/full-black.jpg",
+                title: "Escalar Full Black",
+                text: "Color negro profundo, ideal para proyectos de cría y exhibición.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
                 style={{
-                  width: "100%",
-                  height: "220px",
-                  objectFit: "cover",
+                  backgroundColor: "#ffffff",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
+                  transition: "transform 0.3s ease",
                 }}
-              />
-
-              <div style={{ padding: "20px" }}>
-                <h3 style={{ color: "#0a3d62" }}>{fish.title}</h3>
-                <p style={{ fontSize: "0.95rem", marginBottom: "15px" }}>
-                  {fish.text}
-                </p>
-
-                <a
-                  href="https://wa.me/573208880555"
-                  target="_blank"
-                  style={{
-                    display: "inline-block",
-                    padding: "10px 16px",
-                    backgroundColor: "#0a3d62",
-                    color: "white",
-                    borderRadius: "6px",
-                    textDecoration: "none",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Consultar disponibilidad
-                </a>
+              >
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+                <div style={{ padding: "22px" }}>
+                  <h3 style={{ color: "#0a3d62", marginBottom: "10px" }}>
+                    {item.title}
+                  </h3>
+                  <p>{item.text}</p>
+                  <a
+                    href="https://wa.me/573208880555"
+                    target="_blank"
+                    style={{
+                      display: "inline-block",
+                      marginTop: "14px",
+                      color: "#1e6091",
+                      fontWeight: "bold",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Consultar disponibilidad →
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ================= ENVIOS ================= */}
+      <section
+        style={{
+          backgroundColor: "#eef4f8",
+          padding: "70px 20px",
+          textAlign: "center",
+        }}
+      >
+        <h2 style={{ color: "#0a3d62" }}>🚚 Envíos a nivel nacional</h2>
+        <p style={{ maxWidth: "700px", margin: "auto" }}>
+          Realizamos envíos seguros a toda Colombia.  
+          El costo depende de la ciudad, cantidad de peces y transportadora.
+        </p>
+      </section>
+
+      {/* ================= FOOTER ================= */}
       <footer
         style={{
           backgroundColor: "#0a3d62",
-          color: "white",
+          color: "#ffffff",
           textAlign: "center",
-          padding: "25px",
+          padding: "22px",
         }}
       >
         © {new Date().getFullYear()} Angelfish Discus · Mosquera, Colombia
