@@ -128,44 +128,119 @@ export default function Home() {
       Preguntas Frecuentes
     </h2>
 
-    <div style={{ marginBottom: "35px" }}>
-      <h3 style={{ color: "#1e6091", marginBottom: "10px" }}>
+    {/* ITEM */}
+    <details
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "16px",
+        padding: "20px 24px",
+        marginBottom: "20px",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
+        cursor: "pointer",
+      }}
+    >
+      <summary
+        style={{
+          fontSize: "1.15rem",
+          fontWeight: "bold",
+          color: "#1e6091",
+          listStyle: "none",
+        }}
+      >
         ⏱️ Tiempos de entrega y forma de envío
-      </h3>
-      <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
+      </summary>
+
+      <p
+        style={{
+          marginTop: "15px",
+          fontSize: "1.05rem",
+          lineHeight: "1.7",
+          color: "#334155",
+        }}
+      >
         Realizamos envíos a nivel nacional dentro de Colombia.
         El tiempo de entrega depende de la ciudad y la transportadora,
         generalmente entre <strong>24 y 48 horas</strong> después del despacho.
         Cada envío se coordina previamente para garantizar la seguridad
         de los peces.
       </p>
-    </div>
+    </details>
 
-    <div style={{ marginBottom: "35px" }}>
-      <h3 style={{ color: "#1e6091", marginBottom: "10px" }}>
+    {/* ITEM */}
+    <details
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "16px",
+        padding: "20px 24px",
+        marginBottom: "20px",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
+        cursor: "pointer",
+      }}
+    >
+      <summary
+        style={{
+          fontSize: "1.15rem",
+          fontWeight: "bold",
+          color: "#1e6091",
+          listStyle: "none",
+        }}
+      >
         🚚 Envío de peces y garantía
-      </h3>
-      <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
+      </summary>
+
+      <p
+        style={{
+          marginTop: "15px",
+          fontSize: "1.05rem",
+          lineHeight: "1.7",
+          color: "#334155",
+        }}
+      >
         Los peces se envían con empaque especializado, oxígeno y aislamiento
         térmico. Garantizamos que los peces salen vivos y en óptimas condiciones.
         Cualquier novedad debe reportarse inmediatamente al momento de recibir
         el envío.
       </p>
-    </div>
+    </details>
 
-    <div>
-      <h3 style={{ color: "#1e6091", marginBottom: "10px" }}>
+    {/* ITEM */}
+    <details
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "16px",
+        padding: "20px 24px",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
+        cursor: "pointer",
+      }}
+    >
+      <summary
+        style={{
+          fontSize: "1.15rem",
+          fontWeight: "bold",
+          color: "#1e6091",
+          listStyle: "none",
+        }}
+      >
         📍 ¿Tienen punto físico?
-      </h3>
-      <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "#334155" }}>
+      </summary>
+
+      <p
+        style={{
+          marginTop: "15px",
+          fontSize: "1.05rem",
+          lineHeight: "1.7",
+          color: "#334155",
+        }}
+      >
         Estamos ubicados en <strong>Mosquera, Cundinamarca</strong>.
         Angelfish Discus es un <strong>hobby especializado</strong> enfocado
         en la cría responsable de escalares.
         Las visitas se realizan únicamente con cita previa.
       </p>
-    </div>
+    </details>
   </div>
 </section>
+
 {/* ================= BULGARO BLACK ================= */}
 <section
   style={{
