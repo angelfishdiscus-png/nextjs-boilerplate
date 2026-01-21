@@ -56,7 +56,8 @@ function Hero() {
     >
       <h1 style={{ fontSize: "3rem" }}>Escalares Premium en Colombia</h1>
       <p style={{ maxWidth: "800px", margin: "20px auto", fontSize: "1.2rem" }}>
-        Cría responsable, genética seleccionada y peces de alta calidad.
+        Criadores especializados en peces ángel con genética seleccionada,
+          excelente salud y asesoría profesional real.
       </p>
       <p>📍 Mosquera – Cundinamarca</p>
     </section>
@@ -215,15 +216,22 @@ function FAQ() {
   const items = [
     {
       title: "⏱️ Tiempos de entrega",
-      text: "Entregas entre 24 y 48 horas según ciudad y transportadora.",
+      text: "Realizamos envíos a nivel nacional dentro de Colombia.
+        El tiempo de entrega depende de la ciudad y la transportadora,
+        generalmente entre <strong>24 y 48 horas</strong> después del despacho.
+        Cada envío se coordina previamente para garantizar la seguridad
+        de los peces.",
     },
     {
       title: "🚚 Garantía de envío",
-      text: "Empaque profesional con oxígeno y aislamiento térmico.",
+      text: "Los peces se envían en empaque especializado con oxígeno, garantizando que salen vivos y en óptimas condiciones.
+Cualquier novedad debe ser reportada de inmediato al momento de recibir el envío. Es indispensable grabar la apertura y recepción del paquete, ya que en caso de presentarse alguna pérdida, el ejemplar será repuesto.",
     },
     {
       title: "📍 Punto físico",
-      text: "Mosquera, Cundinamarca. Visitas solo con cita previa.",
+      text: "Estamos ubicados en <strong>Mosquera, Cundinamarca</strong>.
+        Angelfish Discus es un <strong>hobby especializado</strong> enfocado
+        en la cría responsable de escalares.",
     },
   ];
 
