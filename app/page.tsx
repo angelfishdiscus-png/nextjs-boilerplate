@@ -63,23 +63,101 @@ function Hero() {
   );
 }
 
-/* ================= QUIENES SOMOS (CARDS) ================= */
+/* ================= VARIEDADES CON BOTÓN ================= */
+function Variedades() {
+  const peces = [
+    { img: "/red-devil.jpg", nombre: "Escalar Red Devil" },
+    { img: "/albino.jpg", nombre: "Escalar Albino" },
+    { img: "/full-black.jpg", nombre: "Escalar Full Black" },
+  ];
+
+  return (
+    <section style={{ padding: "100px 20px", backgroundColor: "#f4f8fb" }}>
+      <h2
+        style={{
+          textAlign: "center",
+          color: "#0a3d62",
+          fontSize: "2.4rem",
+          marginBottom: "50px",
+        }}
+      >
+        Variedades Disponibles
+      </h2>
+
+      <div
+        style={{
+          maxWidth: "1100px",
+          margin: "auto",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "32px",
+        }}
+      >
+        {peces.map((pez, i) => (
+          <div
+            key={i}
+            style={{
+              backgroundColor: "#ffffff",
+              borderRadius: "18px",
+              overflow: "hidden",
+              boxShadow: "0 14px 35px rgba(0,0,0,0.15)",
+            }}
+          >
+            <img
+              src={pez.img}
+              alt={pez.nombre}
+              style={{
+                width: "100%",
+                height: "220px",
+                objectFit: "cover",
+              }}
+            />
+
+            <div style={{ padding: "22px", textAlign: "center" }}>
+              <h3 style={{ color: "#1e6091", marginBottom: "16px" }}>
+                {pez.nombre}
+              </h3>
+
+              <a
+                href="https://wa.me/573208880555"
+                target="_blank"
+                style={{
+                  display: "inline-block",
+                  padding: "10px 22px",
+                  backgroundColor: "#1e6091",
+                  color: "#ffffff",
+                  borderRadius: "30px",
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                }}
+              >
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ================= QUIENES SOMOS ================= */
 function AboutCards() {
   const cards = [
     {
       icon: "🐠",
       title: "Cría Responsable",
-      text: "Nos dedicamos a la cría ética y controlada de escalares premium, priorizando el bienestar animal.",
+      text: "Cría ética de escalares premium, priorizando el bienestar animal.",
     },
     {
       icon: "🧬",
       title: "Genética Seleccionada",
-      text: "Trabajamos con líneas de alta calidad, colores definidos y peces bien conformados.",
+      text: "Líneas de alta calidad, colores definidos y peces bien conformados.",
     },
     {
       icon: "🏆",
       title: "Manejo Profesional",
-      text: "Parámetros estables, alimentación especializada y peces fuertes y adaptados.",
+      text: "Parámetros estables y alimentación especializada.",
     },
   ];
 
@@ -114,7 +192,6 @@ function AboutCards() {
               padding: "36px 28px",
               boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
               textAlign: "center",
-              transition: "0.3s",
             }}
           >
             <div style={{ fontSize: "3rem", marginBottom: "18px" }}>
@@ -131,65 +208,25 @@ function AboutCards() {
   );
 }
 
-/* ================= FAQ ITEM PREMIUM ================= */
-function FaqItem({ title, children }: any) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div style={{ marginBottom: "18px" }}>
-      <div
-        onClick={() => setOpen(!open)}
-        style={{
-          backgroundColor: "#1e6091",
-          color: "#ffffff",
-          padding: "18px 22px",
-          borderRadius: "14px",
-          cursor: "pointer",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontWeight: "600",
-        }}
-      >
-        {title}
-        <span
-          style={{
-            fontSize: "1.4rem",
-            transform: open ? "rotate(90deg)" : "rotate(0deg)",
-            transition: "0.3s ease",
-          }}
-        >
-          ❯
-        </span>
-      </div>
-
-      <div
-        style={{
-          maxHeight: open ? "300px" : "0",
-          overflow: "hidden",
-          transition: "0.35s ease",
-          opacity: open ? 1 : 0,
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: "#ffffff",
-            padding: "20px",
-            borderRadius: "0 0 14px 14px",
-            lineHeight: "1.7",
-            border: "1px solid #e5e7eb",
-            borderTop: "none",
-          }}
-        >
-          {children}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ================= FAQ ================= */
 function FAQ() {
+  const [open, setOpen] = useState<number | null>(null);
+
+  const items = [
+    {
+      title: "⏱️ Tiempos de entrega",
+      text: "Entregas entre 24 y 48 horas según ciudad y transportadora.",
+    },
+    {
+      title: "🚚 Garantía de envío",
+      text: "Empaque profesional con oxígeno y aislamiento térmico.",
+    },
+    {
+      title: "📍 Punto físico",
+      text: "Mosquera, Cundinamarca. Visitas solo con cita previa.",
+    },
+  ];
+
   return (
     <section style={{ backgroundColor: "#e6f0f8", padding: "90px 20px" }}>
       <div style={{ maxWidth: "900px", margin: "auto" }}>
@@ -197,19 +234,36 @@ function FAQ() {
           Preguntas Frecuentes
         </h2>
 
-        <FaqItem title="⏱️ Tiempos de entrega y forma de envío">
-          Envíos a nivel nacional en Colombia. Entregas entre <strong>24 y 48 horas</strong>,
-          coordinadas previamente para garantizar la seguridad de los peces.
-        </FaqItem>
+        {items.map((item, i) => (
+          <div key={i} style={{ marginTop: "20px" }}>
+            <div
+              onClick={() => setOpen(open === i ? null : i)}
+              style={{
+                backgroundColor: "#1e6091",
+                color: "#fff",
+                padding: "18px 22px",
+                borderRadius: "14px",
+                cursor: "pointer",
+                fontWeight: "600",
+              }}
+            >
+              {item.title}
+            </div>
 
-        <FaqItem title="🚚 Envío de peces y garantía">
-          Empaque profesional con oxígeno y aislamiento térmico. Garantizamos
-          peces vivos y en óptimas condiciones al despacho.
-        </FaqItem>
-
-        <FaqItem title="📍 ¿Tienen punto físico?">
-          Estamos ubicados en Mosquera, Cundinamarca. Visitas únicamente con cita previa.
-        </FaqItem>
+            {open === i && (
+              <div
+                style={{
+                  backgroundColor: "#ffffff",
+                  padding: "20px",
+                  borderRadius: "0 0 14px 14px",
+                  lineHeight: "1.7",
+                }}
+              >
+                {item.text}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -237,6 +291,7 @@ export default function Home() {
     <div style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#f4f8fb" }}>
       <Header />
       <Hero />
+      <Variedades />
       <AboutCards />
       <FAQ />
       <Footer />
