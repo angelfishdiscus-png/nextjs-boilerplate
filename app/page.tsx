@@ -57,14 +57,14 @@ function Hero() {
       <h1 style={{ fontSize: "3rem" }}>Escalares Premium en Colombia</h1>
       <p style={{ maxWidth: "800px", margin: "20px auto", fontSize: "1.2rem" }}>
         Criadores especializados en peces ángel con genética seleccionada,
-          excelente salud y asesoría profesional real.
+        excelente salud y asesoría profesional real.
       </p>
       <p>📍 Mosquera – Cundinamarca</p>
     </section>
   );
 }
 
-/* ================= VARIEDADES CON BOTÓN ================= */
+/* ================= VARIEDADES ================= */
 function Variedades() {
   const peces = [
     { img: "/red-devil.jpg", nombre: "Escalar Red Devil" },
@@ -142,7 +142,7 @@ function Variedades() {
   );
 }
 
-/* ================= QUIENES SOMOS ================= */
+/* ================= QUIÉNES SOMOS ================= */
 function AboutCards() {
   const cards = [
     {
@@ -216,22 +216,35 @@ function FAQ() {
   const items = [
     {
       title: "⏱️ Tiempos de entrega",
-      text: "Realizamos envíos a nivel nacional dentro de Colombia.
-        El tiempo de entrega depende de la ciudad y la transportadora,
-        generalmente entre <strong>24 y 48 horas</strong> después del despacho.
-        Cada envío se coordina previamente para garantizar la seguridad
-        de los peces.",
+      text: (
+        <>
+          Realizamos envíos a nivel nacional dentro de Colombia. El tiempo de
+          entrega depende de la ciudad y la transportadora, generalmente entre{" "}
+          <strong>24 y 48 horas</strong> después del despacho. Cada envío se
+          coordina previamente para garantizar la seguridad de los peces.
+        </>
+      ),
     },
     {
       title: "🚚 Garantía de envío",
-      text: "Los peces se envían en empaque especializado con oxígeno, garantizando que salen vivos y en óptimas condiciones.
-Cualquier novedad debe ser reportada de inmediato al momento de recibir el envío. Es indispensable grabar la apertura y recepción del paquete, ya que en caso de presentarse alguna pérdida, el ejemplar será repuesto.",
+      text: (
+        <>
+          Los peces se envían con empaque especializado, oxígeno y aislamiento
+          térmico. Garantizamos que los peces salen vivos y en óptimas
+          condiciones. Cualquier novedad debe reportarse inmediatamente al
+          recibir el envío.
+        </>
+      ),
     },
     {
       title: "📍 Punto físico",
-      text: "Estamos ubicados en <strong>Mosquera, Cundinamarca</strong>.
-        Angelfish Discus es un <strong>hobby especializado</strong> enfocado
-        en la cría responsable de escalares.",
+      text: (
+        <>
+          Estamos ubicados en <strong>Mosquera, Cundinamarca</strong>. Angelfish
+          Discus es un <strong>hobby especializado</strong> enfocado en la cría
+          responsable de escalares. Visitas solo con cita previa.
+        </>
+      ),
     },
   ];
 
