@@ -111,19 +111,54 @@ export default function Home() {
         <p>📍 Mosquera – Cundinamarca</p>
       </section>
 
-      {/* ================= QUIENES SOMOS ================= */}
-      <section style={{ padding: "80px 20px", maxWidth: "1000px", margin: "auto" }}>
-        <h2 style={{ color: "#0a3d62" }}>🐠 ¿Quiénes somos?</h2>
-        <p style={{ lineHeight: "1.7", fontSize: "1.05rem" }}>
-          En <strong>Angelfish Discus</strong> nos dedicamos a la cría responsable
-          de peces ornamentales, especializados en <strong>escalares</strong> de
-          alta calidad y próximamente <strong>discos</strong>.
-        </p>
-        <p style={{ lineHeight: "1.7", fontSize: "1.05rem" }}>
-          Trabajamos con parámetros estables, alimentación especializada y
-          manejo profesional, garantizando peces sanos y fuertes.
-        </p>
-      </section>
+    {/* ================= QUIENES SOMOS ================= */}
+<section
+  style={{
+    padding: "100px 20px",
+    backgroundColor: "#ffffff",
+    borderTop: "6px solid #1e6091",
+  }}
+>
+  <div style={{ maxWidth: "1000px", margin: "auto" }}>
+    <h2
+      style={{
+        color: "#0a3d62",
+        fontSize: "2.4rem",
+        marginBottom: "24px",
+        textAlign: "center",
+      }}
+    >
+      🐠 ¿Quiénes somos?
+    </h2>
+
+    <p
+      style={{
+        lineHeight: "1.8",
+        fontSize: "1.1rem",
+        marginBottom: "18px",
+        color: "#334155",
+      }}
+    >
+      En <strong>Angelfish Discus</strong> nos dedicamos a la cría responsable
+      de peces ornamentales, especializados en <strong>escalares</strong> de
+      alta calidad y próximamente <strong>discos</strong>.
+    </p>
+
+    <p
+      style={{
+        lineHeight: "1.8",
+        fontSize: "1.1rem",
+        color: "#334155",
+      }}
+    >
+      Nuestros peces son criados bajo parámetros estables, alimentación
+      especializada y manejo profesional, garantizando ejemplares sanos,
+      fuertes y bien adaptados al acuario del cliente.
+    </p>
+  </div>
+</section>
+
+     
 
       {/* ================= BULGARO BLACK ================= */}
       <section style={{ padding: "90px 20px", backgroundColor: "#ffffff" }}>
